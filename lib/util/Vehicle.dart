@@ -12,5 +12,5 @@ class Vehicle
       this.year = year;
 
   @override
-  String toString() => 'Car: $make ' ' $model' ' $year';
+  String toString() => 'Car: $make ' ' $model' ' $year' 'License Plate: $licenseNum';
 }
