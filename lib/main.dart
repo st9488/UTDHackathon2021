@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:utd_hackathon2021/pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,9 +48,16 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark
         ),
         fontFamily: 'BabasNeue',
-
       ),
-      home:
+      // Starts on the Login Screen
+      initialRoute: "Login",
+      // List of routes for our User to use
+      routes: {
+        // Login Route for the User
+        "Login": (context) => const LoginPage(),
+        //
+      },
+      home: const LoginPage()
     );
   }
 }
