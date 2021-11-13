@@ -31,43 +31,51 @@ class _VehiclePageState extends State<VehiclePage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             Text('Make of your car',
-              style: TextStyle(color: Colors.white),
+              //style: TextStyle(color: Colors.white),
             ),
             CupertinoTextField(
               style: TextStyle(color: Colors.white),
               onChanged: (String value)
               {
                 _textController1.value;
-                print(value);
               },
             ),
+            Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             Text('Model of your car',
-              style: TextStyle(color: Colors.white),
+              //style: TextStyle(color: Colors.white),
             ),
             CupertinoTextField(
               style: TextStyle(color: Colors.white),
               onChanged: (String value)
               {
                 _textController2.value;
-                print(value);
               },
             ),
+            Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             Text('Year of your car',
-              style: TextStyle(color: Colors.white),
+              //style: TextStyle(color: Colors.white),
             ),
             CupertinoTextField(
               style: TextStyle(color: Colors.white),
               onChanged: (String value)
               {
                 _textController3.value;
-                print(value);
               },
+            ),
+            Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+            CupertinoButton(
+                child: Text('Move forward'),
+                onPressed: (){
+                  print('You hit me');
+                },
+                color: Colors.blue
             )
           ],
         )
-
       ]
     );
   }
+  //var vehicle = new Vehicle(_textController1.value, _textController2.value, 0);
 }
