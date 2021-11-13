@@ -7,7 +7,7 @@ class Background extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration (
-        color: Theme.of(context).colorScheme.background,
+        color: Theme.of(context).colorScheme.onBackground,
       ),
     );
   }
