@@ -31,11 +31,12 @@ class _VehiclePageState extends State<VehiclePage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+            Padding(padding: EdgeInsets.symmetric(vertical: 60)),
             Text('Make of your car',
-              //style: TextStyle(color: Colors.white),
+              style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red),
             ),
             CupertinoTextField(
+              placeholder: 'Make',
               style: TextStyle(color: Colors.white),
               onChanged: (String value)
               {
@@ -44,9 +45,10 @@ class _VehiclePageState extends State<VehiclePage> {
             ),
             Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             Text('Model of your car',
-              //style: TextStyle(color: Colors.white),
+              style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red),
             ),
             CupertinoTextField(
+              placeholder: 'Model',
               style: TextStyle(color: Colors.white),
               onChanged: (String value)
               {
@@ -55,9 +57,10 @@ class _VehiclePageState extends State<VehiclePage> {
             ),
             Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             Text('Year of your car',
-              //style: TextStyle(color: Colors.white),
+              style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red),
             ),
             CupertinoTextField(
+              placeholder: 'Year',
               style: TextStyle(color: Colors.white),
               onChanged: (String value)
               {
@@ -69,8 +72,9 @@ class _VehiclePageState extends State<VehiclePage> {
                 child: Text('Move forward'),
                 onPressed: (){
                   print('You hit me');
+                  //const LicenseNumbers()
                 },
-                color: Colors.blue
+                color: Colors.red
             )
           ],
         )
