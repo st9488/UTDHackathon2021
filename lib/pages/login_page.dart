@@ -36,6 +36,7 @@ class LoginPage extends StatelessWidget {
             const Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
               child:
                 LoginInfo(),
+
               ),
             ],
           ),
@@ -47,8 +48,17 @@ class LoginPage extends StatelessWidget {
 }
 
 
-class LoginInfo extends StatelessWidget{
+class LoginInfo extends StatefulWidget{
   const LoginInfo({Key? key}) : super(key: key);
+
+  @override
+  State<LoginInfo> createState() => _LoginInfoState();
+}
+
+class _LoginInfoState extends State<LoginInfo> {
+
+  final userController = TextEditingController();
+  final passController = TextEditingController();
 
   @override
   Widget build (BuildContext context){
@@ -58,49 +68,39 @@ class LoginInfo extends StatelessWidget{
           'Login',
           style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue'),
         ),
-        const InputFields(),
+
+        Padding( padding: const EdgeInsets.fromLTRB(0, 5, 0, 20) ,
+          child: Column(
+          children: [
+            Padding(padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+            child:
+              CupertinoTextField(
+                placeholder: 'Username',
+                style: const TextStyle(color: Colors.white),
+                controller: userController,
+              )
+            ),
+            Padding(padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+              child:
+                CupertinoTextField(
+                  placeholder: 'Password',
+                  style: const TextStyle(color: Colors.white),
+                  controller: passController,
+                )
+              ),
+            ],
+          )
+        ),
+
+
         CupertinoButton(
           color: Theme.of(context).colorScheme.background,
           child: const Text("Submit"),
           onPressed: () {
-            print("Debug: Login Button has been clicked.");
+            print(userController.text + " - " + passController.text);
           }
         ),
       ]
-    );
-  }
-}
-
-class InputFields extends StatefulWidget{
-  const InputFields({Key? key}) : super(key: key);
-
-  @override
-  State<InputFields> createState() => _InputFieldsState();
-}
-
-class _InputFieldsState extends State<InputFields> {
-  @override
-  Widget build (BuildContext context){
-    return 
-      Padding( padding: const EdgeInsets.fromLTRB(0, 5, 0, 20) ,
-      child: Column(
-        children: const [
-          Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child:
-                CupertinoTextField(
-                placeholder: 'Username',
-                style: TextStyle(color: Colors.white),
-                )
-          ),
-          Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child:
-                CupertinoTextField(
-                  placeholder: 'Password',
-                  style: TextStyle(color: Colors.white),
-                )
-          ),
-        ],
-      )
     );
   }
 }
