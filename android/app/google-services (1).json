@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "181826314263",
+    "project_id": "utdhackathon2021",
+    "storage_bucket": "utdhackathon2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181826314263:android:5988f30cd25edc11cb7c52",
+        "android_client_info": {
+          "package_name": "com.example.utd_hackathon2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181826314263-a6oer9p02gc5gf1gkkpo5uklq27g3gp2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVcvRzlbbUe2ZKn7J3EeeY1bgHHT0iv7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181826314263-a6oer9p02gc5gf1gkkpo5uklq27g3gp2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
