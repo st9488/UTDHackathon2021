@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:utd_hackathon2021/pages/driver_information.dart';
 import 'package:utd_hackathon2021/pages/login_page.dart';
 
 void main() {
@@ -48,16 +49,23 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark
         ),
         fontFamily: 'BabasNeue',
+        textTheme: const TextTheme (
+          headline1: TextStyle(fontSize: 36, color: Color.fromRGBO(0, 0, 0, 1)),
+          headline2: TextStyle(fontSize: 26, color: Color.fromRGBO(0, 0, 0, 1)),
+          headline3: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
+          bodyText1: TextStyle(fontSize: 12, color: Color.fromRGBO(0, 0, 0, 1)),
+
+        )
       ),
       // Starts on the Login Screen
-      initialRoute: "Login",
+      initialRoute: "DriverInformation",
       // List of routes for our User to use
       routes: {
         // Login Route for the User
         "Login": (context) => const LoginPage(),
-        //
+        // Route for Driver Information
+        "DriverInformation": (context) => const DriverInformationPage(),
       },
-      home: const LoginPage()
     );
   }
 }
