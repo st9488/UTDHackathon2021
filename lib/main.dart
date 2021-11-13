@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/pages/driver_information.dart';
 import 'package:utd_hackathon2021/pages/login_page.dart';
+import 'package:utd_hackathon2021/pages/main_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -64,7 +65,9 @@ class MyApp extends StatelessWidget {
         // Login Route for the User
         "Login": (context) => const LoginPage(),
         // Route for Driver Information
-        "DriverInformation": (context) => const DriverInformationPage(),
+        "DriverInformation": (context) => const DriverInformation(),
+        // Route for Main Page
+        "MainPage": (context) => const MainPage(),
       },
     );
   }
