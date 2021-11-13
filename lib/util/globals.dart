@@ -1,1 +1,3 @@
-library progression.globals
+library progression.globals;
+
+String projectName = "ClaimSafe";
