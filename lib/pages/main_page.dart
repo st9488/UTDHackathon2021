@@ -24,6 +24,7 @@ class MainPage extends StatelessWidget {
               )
             ),
             Container(height: 70),
+
             Container(
               width: 275,
               height: 50,
