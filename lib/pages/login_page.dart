@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
-import 'package:utd_hackathon2021/util/claim.dart';
-import 'package:utd_hackathon2021/util/globals.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -30,8 +28,7 @@ class LoginPage extends StatelessWidget {
                     color: Theme.of(context).colorScheme.background,
                     child: const Text("File a Claim Now"),
                     onPressed: () {
-                      currentClaim = Claim();
-                      Navigator.of(context).pushReplacementNamed('/Tips');
+                      Navigator.of(context).pushReplacementNamed('/Panic');
                     },
                   )
               ),
@@ -65,7 +62,20 @@ class LoginInfo extends StatelessWidget{
               color: Theme.of(context).colorScheme.background,
               child: const Text("Submit"),
               onPressed: () {
-                print("Debug: Login Button has been clicked.");
+                Navigator.of(context).pushReplacementNamed('/Main');
+              }
+          ),
+          const Padding(padding: EdgeInsets.symmetric(vertical: 10),),
+          const Text(
+            'Create Account',
+            style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue'),
+          ),
+          const InputFields(),
+          CupertinoButton(
+              color: Theme.of(context).colorScheme.background,
+              child: const Text("Submit"),
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed('/Main');
               }
           ),
         ]
