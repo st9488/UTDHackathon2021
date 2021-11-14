@@ -67,7 +67,7 @@ class _AccidentLocatorState extends State<AccidentLocator> {
       children: [
         const Background(),
         Padding(
-          padding: const EdgeInsets.fromLTRB(40, 40, 40, 0),
+          padding: const EdgeInsets.symmetric(vertical: 80),
           child:
           Column(
             children: [
