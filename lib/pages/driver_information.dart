@@ -32,68 +32,53 @@ class _DriverInformationState extends State<DriverInformation> {
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             const Text(
               "Your Vehicle",
-              style: TextStyle(fontSize: 30, color: Color.fromRGBO(0, 0, 0, 1), ),
+              style: TextStyle(fontSize: 30, color: Colors.red, decoration: TextDecoration.none),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 10),),
             const Text(
                 "Who was Driving?",
-              style: TextStyle(fontSize: 26, color: Color.fromRGBO(0, 0, 0, 1)),
+              style: TextStyle(fontSize: 26, color: Colors.red, decoration: TextDecoration.none),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
               width: 250,
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: CupertinoTextField(
                     controller: _text1,
                     autocorrect: false,
                     cursorColor: const Color.fromRGBO(255, 255, 255, 1),
                     style: TextStyle(color: Theme.of(context).colorScheme.surface),
                     decoration: const BoxDecoration(
-                      color: Color.fromRGBO(0, 0, 0, 0)
+                      color: Colors.grey
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  color: Theme.of(context).colorScheme.primary,
-                onPressed: () {},
+            ),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
+            SizedBox(
+              width: 250,
+              child: CupertinoTextField(
+                controller: _text2,
+                autocorrect: false,
+                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
+                style: TextStyle(color: Theme.of(context).colorScheme.surface),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
               width: 250,
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: CupertinoTextField(
-                  cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                  controller: _text2,
-                  autocorrect: false,
-                  style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                  decoration: const BoxDecoration(
-                      color: Color.fromRGBO(0, 0, 0, 0)
-                  ),
-                  textAlign: TextAlign.center,
+              child: CupertinoTextField(
+                controller: _text3,
+                autocorrect: false,
+                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
+                style: TextStyle(color: Theme.of(context).colorScheme.surface),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
                 ),
-                color: Theme.of(context).colorScheme.primary,
-                onPressed: () {},
-              ),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-            SizedBox(
-              width: 250,
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: CupertinoTextField(
-                  cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                  controller: _text3,
-                  autocorrect: false,
-                  style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                  decoration: const BoxDecoration(
-                      color: Color.fromRGBO(0, 0, 0, 0)
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                color: Theme.of(context).colorScheme.primary,
-                onPressed: () {},
+                textAlign: TextAlign.center,
               ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
@@ -104,7 +89,7 @@ class _DriverInformationState extends State<DriverInformation> {
                 CupertinoButton(
                     child: const Text(
                       "Add Passenger",
-                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1),
+                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -116,7 +101,7 @@ class _DriverInformationState extends State<DriverInformation> {
                 CupertinoButton(
                     child: const Text(
                       "Add Driver",
-                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
+                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1)),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
@@ -130,7 +115,7 @@ class _DriverInformationState extends State<DriverInformation> {
             CupertinoButton(
                 child: const Text(
                   "No one else",
-                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
+                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1)),
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {

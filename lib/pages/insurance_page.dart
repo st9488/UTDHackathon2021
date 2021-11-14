@@ -29,31 +29,47 @@ class _InsurancePageState extends State<InsurancePage>{
                 ),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
                 const Text('Insurance Company',
-                    style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red)
+                    style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.red)
                 ),
-                CupertinoTextField(
-                  placeholder: 'Company Name',
-                  style: const TextStyle(color: Colors.white),
-                  onChanged: (String value)
-                  {
-                    _textController1.value;
-                  },
+                SizedBox(
+                  width: 250,
+                  child: CupertinoTextField(
+                    placeholderStyle: const TextStyle(color: Colors.white),
+                    placeholder: 'Company Name',
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (String value)
+                    {
+                      _textController1.value;
+                    },
+                    decoration: const BoxDecoration(
+                        color: Colors.grey
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-                const Text('Insurance number',
-                  style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red),
+                const Text('Insurance Number',
+                  style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.red),
                 ),
-                CupertinoTextField(
-                  placeholder: 'Insurance Number',
-                  style: const TextStyle(color: Colors.white),
-                  onChanged: (String value)
-                  {
-                    _textController2.value;
-                  },
+                SizedBox(
+                  width: 250,
+                  child: CupertinoTextField(
+                    placeholderStyle: const TextStyle(color: Colors.white),
+                    placeholder: 'Insurance Number',
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (String value)
+                    {
+                      _textController2.value;
+                    },
+                    decoration: const BoxDecoration(
+                        color: Colors.grey
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
                 ),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
                 CupertinoButton(
-                    child: const Text("Continue"),
+                    child: const Text("Continue", style: TextStyle(color: Colors.white)),
                     onPressed: (){
                       currentClaim.insurance.companyName = _textController1.text;
                       currentClaim.insurance.number = _textController2.text;

@@ -36,8 +36,6 @@ class _EyewitnessState extends State<EyeWitness> {
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
               width: 250,
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: CupertinoTextField(
                   controller: _text1,
                   autocorrect: false,
@@ -48,15 +46,10 @@ class _EyewitnessState extends State<EyeWitness> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                color: Colors.grey,
-                onPressed: () {},
-              ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
               width: 250,
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: CupertinoTextField(
                   cursorColor: const Color.fromRGBO(255, 255, 255, 1),
                   controller: _text2,
@@ -67,15 +60,10 @@ class _EyewitnessState extends State<EyeWitness> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                color: Colors.grey,
-                onPressed: () {},
-              ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
               width: 250,
-              child: CupertinoButton(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: CupertinoTextField(
                   cursorColor: const Color.fromRGBO(255, 255, 255, 1),
                   controller: _text3,
@@ -86,9 +74,6 @@ class _EyewitnessState extends State<EyeWitness> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                color: Colors.grey,
-                onPressed: () {},
-              ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             Row(

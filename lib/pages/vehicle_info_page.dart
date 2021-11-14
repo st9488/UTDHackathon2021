@@ -37,41 +37,65 @@ class _VehiclePageState extends State<VehiclePage> {
               const Text('Make of your car',
                 style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red),
               ),
-              CupertinoTextField(
-                placeholder: 'Make',
-                style: const TextStyle(color: Colors.white),
-                onChanged: (String value)
-                {
-                  _textController1.value;
-                },
+              SizedBox(
+                width: 250,
+                child: CupertinoTextField(
+                  placeholderStyle: const TextStyle(color: Colors.white),
+                  placeholder: 'Make',
+                  style: const TextStyle(color: Colors.white),
+                  onChanged: (String value)
+                  {
+                    _textController1.value;
+                  },
+                  decoration: const BoxDecoration(
+                      color: Colors.grey
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               const Text('Model of your car',
                 style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red),
               ),
-              CupertinoTextField(
-                placeholder: 'Model',
-                style: const TextStyle(color: Colors.white),
-                onChanged: (String value)
-                {
-                  _textController2.value;
-                },
+              SizedBox(
+                width: 250,
+                  child: CupertinoTextField(
+                    placeholderStyle: const TextStyle(color: Colors.white),
+                    placeholder: 'Model',
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (String value)
+                    {
+                      _textController2.value;
+                    },
+                    decoration: const BoxDecoration(
+                        color: Colors.grey
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               const Text('Year of your car',
                 style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red),
               ),
-              CupertinoTextField(
-                placeholder: 'Year',
-                style: const TextStyle(color: Colors.white),
-                onChanged: (String value)
-                {
-                  _textController3.value;
-                },
+              SizedBox(
+                width: 250,
+                  child: CupertinoTextField(
+                    placeholderStyle: const TextStyle(color: Colors.white),
+                    placeholder: 'Year',
+                    style: const TextStyle(color: Colors.white),
+                    onChanged: (String value)
+                    {
+                      _textController3.value;
+                    },
+                    decoration: const BoxDecoration(
+                        color: Colors.grey
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               CupertinoButton(
-                  child: const Text('Move forward'),
+                  child: const Text('Move forward', style: TextStyle(color: Colors.white)),
                   onPressed: (){
                     currentClaim.vehicles.add(Vehicle(year: int.parse(_textController3.text), model: _textController2.text, make: _textController1.text));
                     Navigator.of(context).pushReplacementNamed('/InsuranceInformation');
