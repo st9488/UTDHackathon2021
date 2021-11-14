@@ -1,7 +1,7 @@
-import 'package:utd_hackathon2021/pages/eye_witness_page.dart';
 import 'package:utd_hackathon2021/util/insurance_info.dart';
 import 'package:utd_hackathon2021/util/person.dart';
 import 'package:utd_hackathon2021/util/vehicle.dart';
+import 'eye_witness.dart';
 
 class Claim {
   List<List<Person>> everyone = [];

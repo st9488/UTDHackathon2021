@@ -149,7 +149,7 @@ class _AccidentLocatorState extends State<AccidentLocator> {
                   onPressed: (){
                     print("Confirmed Location: $address");
                     currentClaim.accidentAddress = address;
-                    Navigator.of(context).pushReplacementNamed('/Main');
+                    Navigator.of(context).pushReplacementNamed('/CameraPage');
                   }
               ),
             ],

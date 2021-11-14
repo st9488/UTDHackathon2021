@@ -104,7 +104,9 @@ class PanicPage extends StatelessWidget {
                   child: CupertinoButton(
                       color: Theme.of(context).colorScheme.primary,
                       child: Text('Next', style: TextStyle(color: Theme.of(context).colorScheme.onBackground)),
-                      onPressed: () {}
+                      onPressed: () {
+                        Navigator.of(context).pushReplacementNamed('/Tips');
+                      }
                   ),
                 ),
               ],
