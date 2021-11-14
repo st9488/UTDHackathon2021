@@ -42,11 +42,11 @@ class _TipsPageState extends State<TipsPage>{
                 height: 500,
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                       border: Border.all(
-                        color: Colors.grey,
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))
+                      borderRadius: const BorderRadius.all(Radius.circular(20))
                   ),
                   child: Column(
                     children:const [
@@ -73,7 +73,7 @@ class _TipsPageState extends State<TipsPage>{
                                       "  g. Any video or surveillance \t\t\t\t\t\tevidence about the accident\n"
                                       "  h. Any injuries\n"
                                       "\n3. Do not sign any documents unless it is for the police or your insurance agent.\n"
-                                      "\n4. Be polite, but don't tell anyone the accident was your fault, even if you think it was", style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.white)
+                                      "\n4. Be polite, but don't tell anyone the accident was your fault, even if you think it was", style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Color.fromRGBO(105, 105, 105, 1))
                                   ,),
                               )
                           )

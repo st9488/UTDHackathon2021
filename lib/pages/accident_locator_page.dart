@@ -66,38 +66,46 @@ class _AccidentLocatorState extends State<AccidentLocator> {
       alignment: Alignment.center,
       children: [
         const Background(),
-        Container(
-          alignment: Alignment.topLeft,
-          padding: const EdgeInsets.only(left: 10, top: 35),
-          child: GestureDetector(
-            child: const Icon(CupertinoIcons.arrow_left_circle, color: Colors.black, size: 50,),
-            onTap: () {
-              Navigator.of(context).pushReplacementNamed('/Eyewitness');
-            },
-          ),
-        ),
         Padding(
           padding: const EdgeInsets.fromLTRB(40, 40, 40, 0),
           child:
           Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
 
               // AUTO LOCATING SETTING
-              const Text(
-                "Get Current Location",
-                style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 30),
-              ),
               Container(
-                height: 20,
-              ),
-              CupertinoButton(onPressed: () async{
-                Position position = await _getGeoLocationPosition();
-                location = 'Lat: ${position.latitude} , Long ${position.longitude}';
-                getAddressFromLatLong(position);
-                show = true;
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    border: Border.all(
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                    children: [
+                      const Text(
+                        "Get Current Location",
+                        style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 25),
+                      ),
+                      Container(
+                        height: 10,
+                      ),
+                      CupertinoButton(onPressed: () async{
+                        Position position = await _getGeoLocationPosition();
+                        location = 'Lat: ${position.latitude} , Long ${position.longitude}';
+                        getAddressFromLatLong(position);
+                        show = true;
 
-              }, child: const Text("Generate Location", style: TextStyle(color: Colors.white)),
-                color: Theme.of(context).colorScheme.background,
+                      }, child: const Text("Generate Location", style: TextStyle(color: Colors.white)),
+                        color: Theme.of(context).colorScheme.background,
+                      ),
+                    ],
+                  ),
+                ),
               ),
               Container(
                 height: 20,
@@ -105,78 +113,128 @@ class _AccidentLocatorState extends State<AccidentLocator> {
 
 
               // MANUAL LOCATION SETTING
+              Container(
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    border: Border.all(
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(children: [
+                    const Text(
+                      "Enter the location of the accident:",
+                      style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 25),
+                    ),
 
-              const Text(
-                "Enter the location of the accident:",
-                style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 25),
+                    Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                      placeholder: 'Enter Address',
+                      placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                      controller: addressController,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.white,
+                          ),
+                          borderRadius: const BorderRadius.all(Radius.circular(10))),
+                      textAlign: TextAlign.center,
+                    )),
+                    Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                      placeholder: 'Enter City',
+                      placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                      controller: cityController,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.white,
+                          ),
+                          borderRadius: const BorderRadius.all(Radius.circular(10))),
+                      textAlign: TextAlign.center,
+                    )),
+                    Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                      placeholder: 'Enter State',
+                      placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                      controller: stateController,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.white,
+                          ),
+                          borderRadius: const BorderRadius.all(Radius.circular(10))),
+                      textAlign: TextAlign.center,
+                    )),
+                    Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                      placeholder: 'Enter Zip Code',
+                      placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                      controller: zipController,
+                      style: const TextStyle(color: Colors.black),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(
+                            color: Colors.white,
+                          ),
+                          borderRadius: const BorderRadius.all(Radius.circular(10))),
+                      textAlign: TextAlign.center,
+                    )),
+
+                    Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoButton(
+                        color: Theme.of(context).colorScheme.background,
+                        child: const Text("Submit", style: TextStyle(color: Colors.white)),
+                        onPressed: (){
+                          show = true;
+                          address = ('${addressController.text}, ${cityController.text}, ${stateController.text}, ${zipController.text}');
+                          Navigator.of(context).pushReplacementNamed('/Camera');
+                          //print(address);
+                        }
+                    )),
+                  ],
+                  ),
+                ),
               ),
 
-              Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
-                placeholderStyle: const TextStyle(color:Colors.white),
-                placeholder: 'Enter Address',
-                controller: addressController,
-                style: const TextStyle(color: Colors.white),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
-                ),
-              )),
-              Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
-                placeholderStyle: const TextStyle(color:Colors.white),
-                placeholder: 'Enter City',
-                controller: cityController,
-                style: const TextStyle(color: Colors.white),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
-                ),
-              )),
-              Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
-                placeholderStyle: const TextStyle(color:Colors.white),
-                placeholder: 'Enter State',
-                controller: stateController,
-                style: const TextStyle(color: Colors.white),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
-                ),
-              )),
-              Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
-                placeholderStyle: const TextStyle(color:Colors.white),
-                placeholder: 'Enter Zip Code',
-                controller: zipController,
-                style: const TextStyle(color: Colors.white),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
-                ),
-              )),
 
-              Padding(padding: const EdgeInsets.fromLTRB(0, 40, 0, 0), child: CupertinoButton(
-                  color: Theme.of(context).colorScheme.background,
-                  child: const Text("Submit", style: TextStyle(color: Colors.white)),
-                  onPressed: (){
-                    address = ('${addressController.text}, ${cityController.text}, ${stateController.text}, ${zipController.text}');
-                    show = true;
-                    print(address);
-                  }
-              )),
 
               Container(
                 height: 30,
               ),
 
-              if(show)Text(
-                "Your current location: \n$address",
-                style: const TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 15),
-              ),
-              Container(
-                height: 20,
-              ),
-              if(show)CupertinoButton(
-                  color: Theme.of(context).colorScheme.background,
-                  child: const Text("Confirm Location", style: TextStyle(color: Colors.white)),
-                  onPressed: (){
-                    print("Confirmed Location: $address");
-                    currentClaim.accidentAddress = address;
-                    Navigator.of(context).pushReplacementNamed('/Camera ');
-                  }
+
+              if(show)Container(
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    border: Border.all(
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(children: [
+                    Text(
+                      address,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 15),
+                    ),
+                    Container(
+                      height: 20,
+                    ),
+                    CupertinoButton(
+                        color: Theme.of(context).colorScheme.background,
+                        child: const Text("Confirm Location", style: TextStyle(color: Colors.white)),
+                        onPressed: (){
+                          print("Confirmed Location: $address");
+                          currentClaim.accidentAddress = address;
+                          Navigator.of(context).pushReplacementNamed('/Camera');
+                        }
+                    ),
+                  ],
+                  ),
+                ),
               ),
             ],
           ),

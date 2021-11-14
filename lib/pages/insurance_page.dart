@@ -32,13 +32,13 @@ class _InsurancePageState extends State<InsurancePage>{
                   width: 300,
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.grey,
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
                         border: Border.all(
-                          color: Colors.grey,
+                          color: const Color.fromRGBO(93, 93, 93, 0.18),
                         ),
-                        borderRadius: BorderRadius.all(Radius.circular(20))
+                        borderRadius: const BorderRadius.all(Radius.circular(20))
                     ),
-                    child: Padding(padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Padding(padding: const EdgeInsets.symmetric(vertical: 20),
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [

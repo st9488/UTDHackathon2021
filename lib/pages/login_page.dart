@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:utd_hackathon2021/UI/background.dart';
 import 'package:utd_hackathon2021/util/claim.dart';
 import 'package:utd_hackathon2021/util/globals.dart';
 import 'package:utd_hackathon2021/util/services/auth.dart';
@@ -13,19 +14,20 @@ class LoginPage extends StatelessWidget {
     return Stack (
       alignment: Alignment.center,
       children: [
-        Image.asset('assets/graphics/family.png'),
+        const Background(),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-
+            const SizedBox(width: 120, height: 120, child:Image(image: AssetImage('assets/graphics/logo.png'))),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
             Container(
               width: 325,
-              height: 190,
+              height: 180,
               decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: const Color.fromRGBO(93, 93, 93, 0.18),
                   border: Border.all(
-                    color: Colors.grey,
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
                   ),
                   borderRadius: const BorderRadius.all(Radius.circular(20))
               ),
@@ -40,8 +42,9 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue'),
                   ),
                   Container(
-                    height: 30,
+                    height: 20,
                   ),
+
                   SizedBox(
                     width: 250,
                     child: CupertinoButton(
@@ -61,17 +64,15 @@ class LoginPage extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 40,
-            ),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
 
             Container(
                 width: 325,
-                height: 400,
+                height: 390,
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
                     border: Border.all(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(20))),
                 child: const LoginInfo()

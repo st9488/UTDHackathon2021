@@ -30,9 +30,9 @@ class PanicPage extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                       border: Border.all(
-                        color: Colors.grey,
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
                       ),
                       borderRadius: const BorderRadius.all(Radius.circular(20))
                   ),
@@ -54,9 +54,9 @@ class PanicPage extends StatelessWidget {
                   width: 375,
                   height: 340,
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                       border: Border.all(
-                        color: Colors.grey,
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
                       ),
                       borderRadius: const BorderRadius.all(Radius.circular(20))
                   ),
@@ -77,56 +77,56 @@ class PanicPage extends StatelessWidget {
                         ),
                         Container(height: 20),
                         const Text("• Date and time of the accident" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',
                             )
                         ),
                         const Text("• Personal information of the parties involved" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',
                             )
                         ),
                         const Text("• Statements from the drivers" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',
                             )
                         ),
                         const Text("• Statements from any witnesses" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',
                             )
                         ),
                         const Text("• Information about the vehicles involved in the accident" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',
                             )
                         ),
                         const Text("• Description of the road and any other environmental issues" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',
                             )
                         ),
                         const Text("• Any video or surveillance equipment that may have documented the accident" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',
                             )
                         ),
                         const Text("• Injuries" ,
-                            style: TextStyle(color: Colors.white,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
                                 decoration: TextDecoration.none,
                                 fontSize: 15,
                               fontFamily: 'Bebas',

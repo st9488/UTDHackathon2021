@@ -18,8 +18,10 @@ class MainPage extends StatelessWidget {
             const Text('Welcome to State Farm!',
                 style: TextStyle(
                     decoration: TextDecoration.none,
-                    fontSize: 18
-                )
+                    fontSize: 49,
+                  fontFamily: "BebasNeue",
+                ),
+              textAlign: TextAlign.center,
             ),
             Container(height: 70),
 
@@ -28,7 +30,7 @@ class MainPage extends StatelessWidget {
               height: 50,
               child: CupertinoButton(
                   color: Theme.of(context).colorScheme.primary,
-                  child: const Text('File New Claim'),
+                  child: const Text('File New Claim', style: TextStyle(color: Colors.white),),
                   onPressed: () {}
               ),
             ),
@@ -38,16 +40,7 @@ class MainPage extends StatelessWidget {
               height: 50,
               child: CupertinoButton(
                   color: Theme.of(context).colorScheme.primary,
-                  child: const Text('See Previous Claims'),
-                  onPressed: () {}
-              ),
-            ),
-            SizedBox(
-              width: 275,
-              height: 50,
-              child: CupertinoButton(
-                  color: Theme.of(context).colorScheme.primary,
-                  child: const Text('Log Out'),
+                  child: const Text('Log Out', style: TextStyle(color: Colors.white)),
                   onPressed: () {}
               ),
             )

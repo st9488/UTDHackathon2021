@@ -60,9 +60,9 @@ class _PassengerInformationState extends State<PassengerInformation> {
               height: 200,
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
                     border: Border.all(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                     ),
                     borderRadius: const BorderRadius.all(Radius.circular(20))
                 ),
@@ -151,9 +151,9 @@ class _PassengerInformationState extends State<PassengerInformation> {
                 height: 300,
                 child: Container(
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                       border: Border.all(
-                        color: Colors.grey,
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
                       ),
                       borderRadius: const BorderRadius.all(Radius.circular(20))
                   ),

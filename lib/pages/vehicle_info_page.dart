@@ -36,7 +36,7 @@ class _VehiclePageState extends State<VehiclePage> {
           const Padding(padding: EdgeInsets.symmetric(vertical: 30),),
           const Text(
               'Other Vehicle Information',
-            style: TextStyle(color: Colors.red, fontSize: 32, decoration: TextDecoration.none),
+            style: TextStyle(color: Colors.red, fontSize: 32, decoration: TextDecoration.none, fontFamily: "Bebas"),
             textAlign: TextAlign.center,
 
           ),
@@ -45,7 +45,7 @@ class _VehiclePageState extends State<VehiclePage> {
             width: 325,
             height: 450,
             decoration: const BoxDecoration(
-                color: Color.fromRGBO(184, 184, 184, 1),
+                color: Color.fromRGBO(93, 93, 93, 0.18),
                 borderRadius: BorderRadius.all(Radius.circular(20))),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

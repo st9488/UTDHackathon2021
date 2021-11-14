@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
-import 'package:utd_hackathon2021/util/services/database.dart';
-import 'package:utd_hackathon2021/util/globals.dart';
 
 class CameraPage extends StatefulWidget{
   const CameraPage({Key? key}) : super(key: key);
@@ -91,12 +89,6 @@ class CameraWidgetState extends State<CameraPage>{
                   color: Theme.of(context).colorScheme.primary,
                   child: Text("Next", style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
                   onPressed: () async {
-                    await DatabaseServiceUnlogged().newClaim(
-                        currentClaim.everyone,
-                        currentClaim.vehicles,
-                        currentClaim.insurance,
-                        currentClaim.eyewitness,
-                        currentClaim.accidentAddress);
                     Navigator.of(context).pushReplacementNamed('/');
                   }
               )
