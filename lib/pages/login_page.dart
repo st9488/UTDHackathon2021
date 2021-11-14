@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
+import 'package:utd_hackathon2021/util/claim.dart';
+import 'package:utd_hackathon2021/util/globals.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -28,6 +30,7 @@ class LoginPage extends StatelessWidget {
                     color: Theme.of(context).colorScheme.background,
                     child: const Text("File a Claim Now"),
                     onPressed: () {
+                      currentClaim = Claim();
                       Navigator.of(context).pushReplacementNamed('/Panic');
                     },
                   )
