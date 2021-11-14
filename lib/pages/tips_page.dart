@@ -45,7 +45,7 @@ class _TipsPageState extends State<TipsPage>{
                   "\n4. Be polite, but don't tell anyone the accident was your fault, even if you think it was", style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.red)
                   ,)
             )
-        )
+        ),
           CupertinoButton(
               child: Text("Next"),
               onPressed: (){
