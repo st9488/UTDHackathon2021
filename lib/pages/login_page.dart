@@ -27,7 +27,7 @@ class LoginPage extends StatelessWidget {
                 child:
                   CupertinoButton(
                     color: Theme.of(context).colorScheme.background,
-                    child: const Text("File a Claim Now"),
+                    child: const Text("File a Claim Now", style: TextStyle(color: Colors.white)),
                     onPressed: () {
                     print("Debug: File Claim Button has been clicked.");
                     },
@@ -95,7 +95,7 @@ class _LoginInfoState extends State<LoginInfo> {
 
         CupertinoButton(
           color: Theme.of(context).colorScheme.background,
-          child: const Text("Submit"),
+          child: const Text("Submit", style: TextStyle(color: Colors.white)),
           onPressed: () {
             print(userController.text + " - " + passController.text);
           }
