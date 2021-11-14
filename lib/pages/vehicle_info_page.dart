@@ -33,7 +33,7 @@ class _VehiclePageState extends State<VehiclePage> {
               CupertinoTextField(
                 placeholder: 'Make',
                 style: const TextStyle(color: Colors.white),
-                controller: _textController1,
+                controller: _textController1  ,
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               const Text('Model of your car',
