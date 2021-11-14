@@ -1,8 +1,10 @@
+import 'package:utd_hackathon2021/pages/eye_witness_page.dart';
 import 'package:utd_hackathon2021/util/person.dart';
 import 'package:utd_hackathon2021/util/vehicle.dart';
 
 class Claim {
   List<List<Person>> everyone = [];
+  List<Eyewitness> eyewitness = [];
   List<List<Vehicle>> vehicles = [];
   String accidentAddress = '';
 
