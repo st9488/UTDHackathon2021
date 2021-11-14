@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:utd_hackathon2021/UI/background.dart';
 
 class CameraWidget extends StatefulWidget{
   @override
@@ -19,9 +20,11 @@ class CameraWidgetState extends State<CameraWidget>{
   Future<void>_showChoiceDialog(BuildContext context)
   {
     return showDialog(context: context,builder: (BuildContext context){
+      const Background();
 
       return AlertDialog(
-        title: Text("Choose option",style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
+        backgroundColor: Theme.of(context).colorScheme.onBackground,
+        title: Text("Choose Option",style: TextStyle(color: Theme.of(context).colorScheme.primary),),
         content: SingleChildScrollView(
           child: ListBody(
             children: [
@@ -30,7 +33,7 @@ class CameraWidgetState extends State<CameraWidget>{
                 onTap: (){
                   _openGallery(context);
                 },
-                title: const Text("Gallery"),
+                title: Text("Gallery",style: TextStyle(color: Theme.of(context).colorScheme.primary),),
                 leading: Icon(Icons.account_box,color: Theme.of(context).colorScheme.primary,),
               ),
 
@@ -39,7 +42,7 @@ class CameraWidgetState extends State<CameraWidget>{
                 onTap: (){
                   _openCamera(context);
                 },
-                title: const Text("Camera"),
+                title: Text("Camera", style: TextStyle(color: Theme.of(context).colorScheme.primary),),
                 leading: Icon(Icons.camera,color: Theme.of(context).colorScheme.primary,),
               ),
             ],
@@ -56,34 +59,41 @@ class CameraWidgetState extends State<CameraWidget>{
         backgroundColor: Theme.of(context).colorScheme.onBackground,
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Container(
-              height: 300,
-              width: 400,
-              child: Card(
-                child:( imageFile==null)?Text("Choose Image",
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-
-                    )
-                ): Image.file( File(  imageFile!.path)),
+        child: Container(
+          color:  Theme.of(context).colorScheme.onBackground,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Container(
+                color: Theme.of(context).colorScheme.onSecondary,
+                height: 300,
+                width: 400,
+                child: Card(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                  child:( imageFile==null)?Center(
+                    child: Text("Choose Image",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                          fontSize: 20,
+                        )
+                    ),
+                  ): Image.file( File(  imageFile!.path)),
+                ),
               ),
-            ),
-            CupertinoButton(
-              color: Theme.of(context).colorScheme.primary,
-                child: Text("Select Image", style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
-                onPressed: (){
-            _showChoiceDialog(context);
-            },
-            ),
-            CupertinoButton(
-              color: Theme.of(context).colorScheme.primary,
-              child: Text("Next", style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
-              onPressed: (){}
-              )
-          ],
+              CupertinoButton(
+                color: Theme.of(context).colorScheme.primary,
+                  child: Text("Select Image", style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
+                  onPressed: (){
+              _showChoiceDialog(context);
+              },
+              ),
+              CupertinoButton(
+                color: Theme.of(context).colorScheme.primary,
+                child: Text("Next", style: TextStyle(color: Theme.of(context).colorScheme.onBackground),),
+                onPressed: (){}
+                )
+            ],
+          ),
         ),
       ),
     );
