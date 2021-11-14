@@ -1,10 +1,15 @@
+import 'package:utd_hackathon2021/util/eye_witness.dart';
+import 'package:utd_hackathon2021/util/insurance_info.dart';
 import 'package:utd_hackathon2021/util/person.dart';
 import 'package:utd_hackathon2021/util/vehicle.dart';
 
 class Claim {
-  List<List<Person>> everyone;
-  List<List<Vehicle>> vehicles;
+  final String uid;
+  List<List<Person>> everyone = [];
+  List<List<Vehicle>> vehicles = [];
+  InsuranceInfo insurance = InsuranceInfo();
+  List<EyeWitness> eyewitnesses = [];
 
-  Claim({required this.everyone, required this.vehicles});
+  Claim({required this.uid});
 
 }
