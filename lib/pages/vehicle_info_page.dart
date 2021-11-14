@@ -53,7 +53,7 @@ class _VehiclePageState extends State<VehiclePage> {
               children: [
                 const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
                 const Text(
-                  'Make of your car',
+                  'Make of car',
                   style: TextStyle(
                       decoration: TextDecoration.none,
                       fontFamily: 'BabasNeue',
@@ -77,7 +77,7 @@ class _VehiclePageState extends State<VehiclePage> {
                 ),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
                 const Text(
-                  'Model of your car',
+                  'Model of car',
                   style: TextStyle(
                       decoration: TextDecoration.none,
                       fontFamily: 'BabasNeue',
@@ -101,7 +101,7 @@ class _VehiclePageState extends State<VehiclePage> {
                 ),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
                 const Text(
-                  'Year of your car',
+                  'Year of car',
                   style: TextStyle(
                       decoration: TextDecoration.none,
                       fontFamily: 'BabasNeue',
