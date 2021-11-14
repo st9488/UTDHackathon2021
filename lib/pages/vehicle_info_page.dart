@@ -13,17 +13,10 @@ class VehiclePage extends StatefulWidget
 }
 
 class _VehiclePageState extends State<VehiclePage> {
-  late TextEditingController _textController1;
-  late TextEditingController _textController2;
-  late TextEditingController _textController3;
-  @override
-  void initState()
-  {
-    super.initState();
-    _textController1 = TextEditingController(text: "make");
-    _textController2 = TextEditingController(text: "model");
-    _textController3 = TextEditingController(text: "year");
-  }
+  final TextEditingController _textController1 = TextEditingController(text: "make");
+  final TextEditingController _textController2 = TextEditingController(text: "model");
+  final TextEditingController _textController3 = TextEditingController(text: "year");
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -40,10 +33,7 @@ class _VehiclePageState extends State<VehiclePage> {
               CupertinoTextField(
                 placeholder: 'Make',
                 style: const TextStyle(color: Colors.white),
-                onChanged: (String value)
-                {
-                  _textController1.value;
-                },
+                controller: _textController1,
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               const Text('Model of your car',
@@ -52,10 +42,7 @@ class _VehiclePageState extends State<VehiclePage> {
               CupertinoTextField(
                 placeholder: 'Model',
                 style: const TextStyle(color: Colors.white),
-                onChanged: (String value)
-                {
-                  _textController2.value;
-                },
+                controller: _textController2,
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               const Text('Year of your car',
@@ -63,17 +50,15 @@ class _VehiclePageState extends State<VehiclePage> {
               ),
               CupertinoTextField(
                 placeholder: 'Year',
+                keyboardType: TextInputType.number,
                 style: const TextStyle(color: Colors.white),
-                onChanged: (String value)
-                {
-                  _textController3.value;
-                },
+                controller: _textController3,
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               CupertinoButton(
                   child: const Text('Move forward'),
                   onPressed: (){
-                    currentClaim.vehicles.add(Vehicle(year: int.parse(_textController3.text), model: _textController2.text, make: _textController1.text));
+                    currentClaim.vehicles.add(Vehicle(year: int.parse(_textController3.text.toString()), model: _textController2.text, make: _textController1.text));
                     Navigator.of(context).pushReplacementNamed('/InsuranceInformation');
                   },
                   color: Colors.red
