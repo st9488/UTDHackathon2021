@@ -46,6 +46,12 @@ class _TipsPageState extends State<TipsPage>{
                   ,)
             )
         )
+          CupertinoButton(
+              child: Text("Next"),
+              onPressed: (){
+
+              }
+          )
         ],
         )
         ]
