@@ -5,9 +5,7 @@ import 'package:utd_hackathon2021/util/eye_witness.dart';
 import 'package:utd_hackathon2021/util/globals.dart';
 
 class EyeWitness extends StatefulWidget {
-  const EyeWitness({Key? key, required this.list}) : super(key: key);
-
-  final List<Eyewitness> list;
+  const EyeWitness({Key? key}) : super(key: key);
 
   @override
   _EyewitnessState createState() => _EyewitnessState();
@@ -28,7 +26,7 @@ class _EyewitnessState extends State<EyeWitness> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Padding(padding: EdgeInsets.symmetric(vertical: 60),),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             const Text(
               "Eyewitness",
               style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.none),
@@ -36,30 +34,30 @@ class _EyewitnessState extends State<EyeWitness> {
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
               width: 250,
-                child: CupertinoTextField(
-                  controller: _text1,
-                  autocorrect: false,
-                  cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                  style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                  decoration: const BoxDecoration(
-                      color: Colors.grey
-                  ),
-                  textAlign: TextAlign.center,
+              child: CupertinoTextField(
+                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
+                controller: _text1,
+                autocorrect: false,
+                style: TextStyle(color: Theme.of(context).colorScheme.surface),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
                 ),
+                textAlign: TextAlign.center,
+              ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
               width: 250,
-                child: CupertinoTextField(
-                  cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                  controller: _text2,
-                  autocorrect: false,
-                  style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                  decoration: const BoxDecoration(
-                      color: Colors.grey
-                  ),
-                  textAlign: TextAlign.center,
+              child: CupertinoTextField(
+                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
+                controller: _text2,
+                autocorrect: false,
+                style: TextStyle(color: Theme.of(context).colorScheme.surface),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
                 ),
+                textAlign: TextAlign.center,
+              ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
@@ -81,28 +79,29 @@ class _EyewitnessState extends State<EyeWitness> {
               children: [
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
                 CupertinoButton(
-                    child: Text(
+                    child: const Text(
                       "Add Eyewitness",
-                      style: TextStyle(fontSize: 30, color: Colors.red, decoration: TextDecoration.underline),
-                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.underline,
                       ),
+                      textAlign: TextAlign.center,
+                    ),
                     onPressed: () {
-                      widget.list.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
+                      currentClaim.eyewitness.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                          EyeWitness(list: widget.list,)));
+                          const EyeWitness()));
                     }),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
               ],
             ),
             CupertinoButton(
-                child: Text(
+                child: const Text(
                   "No one else",
-                  style: TextStyle(fontSize: 30, color: Colors.red, decoration: TextDecoration.underline),
+                  style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.underline),
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
-                  currentClaim.eyewitness = widget.list;
-                  Navigator.of(context).pushReplacementNamed('/');
+                  currentClaim.eyewitness.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
+                  Navigator.of(context).pushReplacementNamed('/AccidentLocator');
                 }),
             const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
           ],

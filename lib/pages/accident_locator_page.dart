@@ -102,24 +102,40 @@ class _AccidentLocatorState extends State<AccidentLocator> {
               ),
 
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: TextStyle(color:Colors.white),
                 placeholder: 'Enter Address',
                 controller: addressController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                  color: Colors.grey
+                ),
               )),
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: TextStyle(color:Colors.white),
                 placeholder: 'Enter City',
                 controller: cityController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
               )),
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: TextStyle(color:Colors.white),
                 placeholder: 'Enter State',
                 controller: stateController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
               )),
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: TextStyle(color:Colors.white),
                 placeholder: 'Enter Zip Code',
                 controller: zipController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
               )),
 
               Padding(padding: const EdgeInsets.fromLTRB(0, 40, 0, 0), child: CupertinoButton(
