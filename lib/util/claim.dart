@@ -6,7 +6,7 @@ import 'eye_witness.dart';
 class Claim {
   List<List<Person>> everyone = [];
   List<Eyewitness> eyewitness = [];
-  List<List<Vehicle>> vehicles = [];
+  List<Vehicle> vehicles = [];
   String accidentAddress = '';
   InsuranceInfo insurance = InsuranceInfo();
 

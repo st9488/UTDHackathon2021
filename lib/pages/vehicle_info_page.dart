@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
+import 'package:utd_hackathon2021/util/globals.dart';
+import 'package:utd_hackathon2021/util/vehicle.dart';
 
 class VehiclePage extends StatefulWidget
 {
@@ -71,7 +73,7 @@ class _VehiclePageState extends State<VehiclePage> {
               CupertinoButton(
                   child: const Text('Move forward'),
                   onPressed: (){
-                    // TODO IMPLEMENT DATABASE CALL/Correct route
+                    currentClaim.vehicles.add(Vehicle(year: int.parse(_textController3.text), model: _textController2.text, make: _textController1.text));
                     Navigator.of(context).pushReplacementNamed('/InsuranceInformation');
                   },
                   color: Colors.red
