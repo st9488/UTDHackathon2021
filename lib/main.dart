@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:utd_hackathon2021/pages/accident_locator_page.dart';
 import 'package:utd_hackathon2021/pages/driver_information.dart';
 import 'package:utd_hackathon2021/pages/eye_witness_page.dart';
 import 'package:utd_hackathon2021/pages/insurance_page.dart';
@@ -82,7 +83,9 @@ class MyApp extends StatelessWidget {
         // Route for InsuranceInformation
         "/InsuranceInformation": (context) => const InsurancePage(),
         // Route for Eyewitness
-        "/Eyewitness": (context) => const Eyewitness(list: []),
+        "/Eyewitness": (context) => const EyeWitness(list: []),
+        // Route for Accident Locator
+        "/AccidentLocator": (context) => const AccidentLocator(),
 
       },
     );

@@ -2,17 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
 import 'package:utd_hackathon2021/util/eye_witness.dart';
+import 'package:utd_hackathon2021/util/globals.dart';
 
-class Eyewitness extends StatefulWidget {
-  const Eyewitness({Key? key, required this.list}) : super(key: key);
+class EyeWitness extends StatefulWidget {
+  const EyeWitness({Key? key, required this.list}) : super(key: key);
 
-  final List<EyeWitness> list;
+  final List<Eyewitness> list;
 
   @override
   _EyewitnessState createState() => _EyewitnessState();
 }
 
-class _EyewitnessState extends State<Eyewitness> {
+class _EyewitnessState extends State<EyeWitness> {
 
   final TextEditingController _text1 = TextEditingController(text: "First");
   final TextEditingController _text2 = TextEditingController(text: "Last");
@@ -102,9 +103,9 @@ class _EyewitnessState extends State<Eyewitness> {
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
-                      widget.list.add(EyeWitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text));
+                      widget.list.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                          Eyewitness(list: widget.list,)));
+                          EyeWitness(list: widget.list,)));
                     }),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
               ],
@@ -116,7 +117,7 @@ class _EyewitnessState extends State<Eyewitness> {
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
-                  // TODO IMPLEMENT DATABASE CALL
+                  currentClaim.eyewitness = widget.list;
                   Navigator.of(context).pushReplacementNamed('/');
                 }),
             const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
