@@ -2,12 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
 
+<<<<<<< HEAD
 class TipsPage extends StatefulWidget{
+=======
+/*class TipsPage extends StatefulWidget{
+>>>>>>> 33a22b2 (Vehicle Object)
   const TipsPage({Key? key}) : super(key: key);
   @override
   State<TipsPage> createState() => _TipsPageState();
 }
 
+<<<<<<< HEAD
 class _TipsPageState extends State<TipsPage>{
   @override
   void initState()
@@ -59,3 +64,6 @@ class _TipsPageState extends State<TipsPage>{
     );
   }
 }
+=======
+*/
+>>>>>>> 33a22b2 (Vehicle Object)
