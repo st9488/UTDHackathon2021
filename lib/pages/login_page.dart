@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:utd_hackathon2021/UI/background.dart';
 import 'package:utd_hackathon2021/util/claim.dart';
 import 'package:utd_hackathon2021/util/globals.dart';
 import 'package:utd_hackathon2021/util/services/auth.dart';
@@ -14,7 +13,7 @@ class LoginPage extends StatelessWidget {
     return Stack (
       alignment: Alignment.center,
       children: [
-        const Background(),
+        Image.asset('assets/graphics/family.png'),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -54,6 +53,7 @@ class LoginPage extends StatelessWidget {
                       ),
 
                       onPressed: () {
+                        currentClaim = Claim();
                         Navigator.of(context).pushReplacementNamed('/Panic');
                       },
                     ),

@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
         // Route for InsuranceInformation
         "/InsuranceInformation": (context) => const InsurancePage(),
         // Route for Eyewitness
-        "/Eyewitness": (context) => const EyeWitness(list: []),
+        "/Eyewitness": (context) => const EyeWitness(),
         // Route for Accident Locator
         "/AccidentLocator": (context) => const AccidentLocator(),
         // Route for Camera

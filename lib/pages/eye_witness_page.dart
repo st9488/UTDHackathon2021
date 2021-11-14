@@ -5,9 +5,7 @@ import 'package:utd_hackathon2021/util/eye_witness.dart';
 import 'package:utd_hackathon2021/util/globals.dart';
 
 class EyeWitness extends StatefulWidget {
-  const EyeWitness({Key? key, required this.list}) : super(key: key);
-
-  final List<Eyewitness> list;
+  const EyeWitness({Key? key}) : super(key: key);
 
   @override
   _EyewitnessState createState() => _EyewitnessState();
@@ -103,9 +101,9 @@ class _EyewitnessState extends State<EyeWitness> {
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
-                      widget.list.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
+                      currentClaim.eyewitness.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                          EyeWitness(list: widget.list,)));
+                          const EyeWitness()));
                     }),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
               ],
@@ -117,8 +115,8 @@ class _EyewitnessState extends State<EyeWitness> {
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
-                  currentClaim.eyewitness = widget.list;
-                  Navigator.of(context).pushReplacementNamed('/');
+                  currentClaim.eyewitness.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
+                  Navigator.of(context).pushReplacementNamed('/AccidentLocator');
                 }),
             const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
           ],
