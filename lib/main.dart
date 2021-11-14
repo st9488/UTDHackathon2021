@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:utd_hackathon2021/pages/accident_locator_page.dart';
+import 'package:utd_hackathon2021/pages/camera_page.dart';
 import 'package:utd_hackathon2021/pages/driver_information.dart';
 import 'package:utd_hackathon2021/pages/eye_witness_page.dart';
 import 'package:utd_hackathon2021/pages/insurance_page.dart';
-//import 'package:utd_hackathon2021/pages/driver_information.dart';
 import 'package:utd_hackathon2021/pages/login_page.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:provider/provider.dart';
 import 'package:utd_hackathon2021/pages/main_page.dart';
 import 'package:utd_hackathon2021/pages/panic_page.dart';
 import 'package:utd_hackathon2021/pages/tips_page.dart';
 import 'package:utd_hackathon2021/pages/vehicle_info_page.dart';
-import 'util/user.dart';
-import 'util/services/auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-
-
-Future<void> main () async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(const MyApp());
@@ -26,15 +22,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<Users?>.value(
-        value: AuthService().user,
-    initialData: null,
-      child: MaterialApp(
-        title: 'HackUTD 2021',
-        theme: ThemeData(
+    return MaterialApp(
+      title: 'HackUTD 2021',
+      theme: ThemeData(
           colorScheme: const ColorScheme(
-              // Lighter Pink Color
-              primary: Color.fromRGBO(240, 123, 255, 1),
+            // Lighter Pink Color
+              primary: Color.fromRGBO(240, 23, 22, 1),
 
               // Darker Variant Of Primary Pink
               primaryVariant: Color.fromRGBO(186, 5, 211, 1),
@@ -56,7 +49,7 @@ class MyApp extends StatelessWidget {
 
               // Black Color On Primary/Secondary/Surface
               onPrimary: Color.fromRGBO(0, 0, 0, 1),
-              onSecondary: Color.fromRGBO(90, 90, 90, 0.5),
+              onSecondary: Color.fromRGBO(93, 93, 93, 0.15),
               onSurface: Color.fromRGBO(0, 0, 0, 1),
 
               // White On Background/Error
@@ -73,7 +66,7 @@ class MyApp extends StatelessWidget {
             headline3: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
             bodyText1: TextStyle(fontSize: 12, color: Color.fromRGBO(0, 0, 0, 1)),
 
-        )
+          )
       ),
       // Starts on the Login Screen
       initialRoute: "/",
@@ -94,9 +87,13 @@ class MyApp extends StatelessWidget {
         // Route for InsuranceInformation
         "/InsuranceInformation": (context) => const InsurancePage(),
         // Route for Eyewitness
-        "/Eyewitness": (context) => const Eyewitness(list: []),
+        "/Eyewitness": (context) => const EyeWitness(),
+        // Route for Accident Locator
+        "/AccidentLocator": (context) => const AccidentLocator(),
+        // Route for Camera
+        "/Camera": (context) => const CameraPage(),
 
       },
-    ));
+    );
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
+import 'package:utd_hackathon2021/util/claim.dart';
 import 'package:utd_hackathon2021/util/globals.dart';
 import 'package:utd_hackathon2021/util/services/auth.dart';
 
@@ -11,69 +12,75 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build (BuildContext context) {
     return Stack (
-        alignment: Alignment.center,
-        children: [
-          const Background(),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-
-                Container(
-                  width: 325,
-                  height: 170,
-                  decoration: BoxDecoration(
-                      color: Colors.grey,
-                      border: Border.all(
-                        color: Colors.grey,
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))
+      alignment: Alignment.center,
+      children: [
+        const Background(),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(width: 120, height: 120, child:Image(image: AssetImage('assets/graphics/logo.png'))),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+            Container(
+              width: 325,
+              height: 180,
+              decoration: BoxDecoration(
+                  color: const Color.fromRGBO(93, 93, 93, 0.18),
+                  border: Border.all(
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
                   ),
-                  //color: Colors.grey,
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 10,
-                      ),
-                      const Text(
-                      'ClaimSafe',
-                      style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue'),
-                    ),
-                    Container(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      width: 250,
-                      child: CupertinoButton(
-                        color: Theme.of(context).colorScheme.background,
-                        child: const Text("File a Claim Now", style: TextStyle(color: Colors.white)),
-                        onPressed: () {
-                          Navigator.of(context).pushReplacementNamed('/Panic');
-                        },
-                      ),
-                    ),
-                    ],
+                  borderRadius: const BorderRadius.all(Radius.circular(20))
+              ),
+              //color: Colors.grey,
+              child: Column(
+                children: [
+                  Container(
+                    height: 10,
                   ),
-                ),
-                Container(
-                  height: 40,
-                ),
+                  const Text(
+                    'ClaimSafe',
+                    style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue'),
+                  ),
+                  Container(
+                    height: 20,
+                  ),
 
-                Container(
-                    width: 325,
-                    height: 380,
-                    decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(
-                          color: Colors.grey,
-                        ),
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                    child: LoginInfo()
+                  SizedBox(
+                    width: 250,
+                    child: CupertinoButton(
+                      color: Theme.of(context).colorScheme.background,
+                      child: const Text(
+                        "I got into an accident!",
+                        style: TextStyle(color: Colors.white,),
+                        textAlign: TextAlign.center,
+                      ),
 
-                ),
-              ],
+                      onPressed: () {
+                        currentClaim = Claim();
+                        Navigator.of(context).pushReplacementNamed('/Panic');
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
-        ],
+            const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+
+            Container(
+                width: 325,
+                height: 390,
+                decoration: BoxDecoration(
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    border: Border.all(
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(20))),
+                child: const LoginInfo()
+
+            ),
+          ],
+        ),
+      ],
 
 
     );
@@ -114,49 +121,50 @@ class _LoginInfoState extends State<LoginInfo> {
               height: 25,
             ),
 
-                SizedBox(
-                  width: 300,
-                  height: 45,
+            SizedBox(
+              width: 300,
+              height: 45,
 
-                  child: CupertinoTextField(
-                    controller: controllerUserSignIn,
-                    placeholder: 'Username',
-                    placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
-                    decoration: BoxDecoration(
+              child: CupertinoTextField(
+                controller: controllerUserSignIn,
+                placeholder: 'Username',
+                placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
                       color: Colors.white,
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.all(Radius.circular(10))
-
                     ),
-                    style: const TextStyle(color: Colors.black),
-                  ),
+                    borderRadius: const BorderRadius.all(Radius.circular(10))
+
                 ),
+                style: const TextStyle(color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+            ),
 
-                Container(
-                  height: 15,
-                ),
+            Container(
+              height: 15,
+            ),
 
-                SizedBox(
-                  width: 300,
-                  height: 45,
-                  child: CupertinoTextField(
-                    controller: controllerPassSignIn,
-                    placeholder: 'Password',
-                    placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
-                          color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.all(Radius.circular(10))
-
+            SizedBox(
+              width: 300,
+              height: 45,
+              child: CupertinoTextField(
+                controller: controllerPassSignIn,
+                placeholder: 'Password',
+                placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    style: const TextStyle(color: Colors.black),
+                    borderRadius: const BorderRadius.all(Radius.circular(10))
 
-                  ),
                 ),
+                style: const TextStyle(color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
+            ),
 
             Container(
               height: 30,
@@ -172,6 +180,7 @@ class _LoginInfoState extends State<LoginInfo> {
                     if(result == null){
                       print("error: user not found");
                     } else {
+                      currentClaim = Claim();
                       currentUserSelf = result;
                       Navigator.of(context).pushReplacementNamed('/Main');
                     }
@@ -188,20 +197,18 @@ class _LoginInfoState extends State<LoginInfo> {
               width: 250,
               child: CupertinoButton(
                   color: Theme.of(context).colorScheme.background,
-                  child: const Text("Create Account", style: TextStyle(color: Colors.white)),
+                  child: const Text("Create Account", style: TextStyle(color: Colors.white), textAlign: TextAlign.center,),
                   onPressed: () async {
                     print(controllerPassSignIn.text + " - " + controllerUserSignIn.text);
-                    dynamic result = await _auth.registerWithEmailAndPassword(controllerUserSignIn.text, controllerPassSignIn.text);
+                    currentUserSelf = await _auth.registerWithEmailAndPassword(controllerUserSignIn.text, controllerPassSignIn.text);
                     Navigator.of(context).pushReplacementNamed('/Main');
                   }
-                ),
+              ),
             ),
-            ]
-            ),
-          );
-        }
-
-
+          ]
+      ),
+    );
   }
 
 
+}

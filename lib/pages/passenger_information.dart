@@ -26,6 +26,16 @@ class _PassengerInformationState extends State<PassengerInformation> {
       alignment: Alignment.center,
       children: [
         const Background(),
+        Container(
+          alignment: Alignment.topLeft,
+          padding: const EdgeInsets.only(left: 10, top: 35),
+          child: GestureDetector(
+            child: const Icon(CupertinoIcons.arrow_left_circle, color: Colors.black, size: 50,),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/Tips');
+            },
+          ),
+        ),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -50,11 +60,11 @@ class _PassengerInformationState extends State<PassengerInformation> {
               height: 200,
               child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: const Color.fromRGBO(93, 93, 93, 0.18),
                     border: Border.all(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                     ),
-                    borderRadius: BorderRadius.all(Radius.circular(20))
+                    borderRadius: const BorderRadius.all(Radius.circular(20))
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -70,7 +80,7 @@ class _PassengerInformationState extends State<PassengerInformation> {
                             placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
                             autocorrect: false,
                             cursorColor: const Color.fromRGBO(0, 0, 0, 1),
-                            style: TextStyle(color: Colors.black),
+                            style: const TextStyle(color: Colors.black),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
@@ -91,7 +101,7 @@ class _PassengerInformationState extends State<PassengerInformation> {
                             placeholder: 'Last Name',
                             placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
                             cursorColor: const Color.fromRGBO(0, 0, 0, 1),
-                            style: TextStyle(color: Colors.black),
+                            style: const TextStyle(color: Colors.black),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
@@ -112,7 +122,7 @@ class _PassengerInformationState extends State<PassengerInformation> {
                             placeholder: 'Gender',
                             placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
                             cursorColor: const Color.fromRGBO(0, 0, 0, 1),
-                            style: TextStyle(color: Colors.black),
+                            style: const TextStyle(color: Colors.black),
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 border: Border.all(
@@ -137,91 +147,91 @@ class _PassengerInformationState extends State<PassengerInformation> {
             Container(height: 30),
 
             SizedBox(
-              width: 300,
-              height: 300,
-              child: Container(
-              decoration: BoxDecoration(
-              color: Colors.grey,
-              border: Border.all(
-                color: Colors.grey,
-              ),
-                borderRadius: BorderRadius.all(Radius.circular(20))
-              ),
-            child:  Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 240,
-                height: 65,
-                child: CupertinoButton(
-                  color: Theme.of(context).colorScheme.background,
+                width: 300,
+                height: 300,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
+                      border: Border.all(
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
+                      ),
+                      borderRadius: const BorderRadius.all(Radius.circular(20))
+                  ),
+                  child:  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 240,
+                        height: 65,
+                        child: CupertinoButton(
+                            color: Theme.of(context).colorScheme.background,
 
-                  child: const Text(
-                    "Add Passenger",
-                    style: TextStyle(fontSize: 15, color: Color.fromRGBO(255, 255, 255, 1),
-                    ),
-                    textAlign: TextAlign.center,
+                            child: const Text(
+                              "Add Passenger",
+                              style: TextStyle(fontSize: 15, color: Color.fromRGBO(255, 255, 255, 1),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            onPressed: () {
+                              widget.list.add(Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text));
+                              print("This is the List of Persons: ${currentClaim.everyone}");
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+                                  PassengerInformation(list: widget.list,)));
+                            }),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      ),
+                      SizedBox(
+                        width: 240,
+                        height: 65,
+                        child: CupertinoButton(
+                            color: Theme.of(context).colorScheme.background,
+                            child: const Text(
+                              "Add Driver",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color.fromRGBO(255, 255, 255, 1)),
+                              textAlign: TextAlign.center,
+                            ),
+                            onPressed: () {
+                              widget.list.add(Person(
+                                  isMale: _text3.text,
+                                  lastName: _text2.text,
+                                  firstName: _text1.text));
+                              print("This is the List of Persons: ${currentClaim.everyone}");
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const OtherDriverInformation()));
+                            }),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                      ),
+                      SizedBox(
+                        width: 240,
+                        height: 65,
+                        child: CupertinoButton(
+                            color: Theme.of(context).colorScheme.background,
+                            child: const Text(
+                              "No One Else",
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  color: Color.fromRGBO(255, 255, 255, 1)),
+                              textAlign: TextAlign.center,
+                            ),
+                            onPressed: () {
+                              currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                              print("This is the List of Persons: ${currentClaim.everyone}");
+                              Navigator.of(context).pushReplacementNamed('/VehicleInformation');
+                            }),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                      ),
+                    ],
                   ),
-                  onPressed: () {
-                    widget.list.add(Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text));
-                    print("This is the List of Persons: ${currentClaim.everyone}");
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                        PassengerInformation(list: widget.list,)));
-                  }),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            ),
-            SizedBox(
-              width: 240,
-              height: 65,
-              child: CupertinoButton(
-                  color: Theme.of(context).colorScheme.background,
-                  child: const Text(
-                    "Add Driver",
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Color.fromRGBO(255, 255, 255, 1)),
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {
-                    widget.list.add(Person(
-                        isMale: _text3.text,
-                        lastName: _text2.text,
-                        firstName: _text1.text));
-                    print("This is the List of Persons: ${currentClaim.everyone}");
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const OtherDriverInformation(list: [],)));
-                  }),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            ),
-            SizedBox(
-              width: 240,
-              height: 65,
-              child: CupertinoButton(
-                  color: Theme.of(context).colorScheme.background,
-                  child: const Text(
-                    "No One Else",
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Color.fromRGBO(255, 255, 255, 1)),
-                    textAlign: TextAlign.center,
-                  ),
-                  onPressed: () {
-                    currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
-                    print("This is the List of Persons: ${currentClaim.everyone}");
-                    Navigator.of(context).pushReplacementNamed('/VehicleInformation');
-                  }),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            ],
-            ),
-            )
+                )
             ),
           ],
         ),

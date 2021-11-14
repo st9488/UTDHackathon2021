@@ -12,6 +12,16 @@ class PanicPage extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           const Background(),
+          Container(
+            alignment: Alignment.topLeft,
+            padding: const EdgeInsets.only(left: 10, top: 35),
+            child: GestureDetector(
+              child: const Icon(CupertinoIcons.arrow_left_circle, color: Colors.black, size: 50,),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/');
+              },
+            ),
+          ),
           SizedBox(
             width: 350,
             child: Column(
@@ -20,19 +30,21 @@ class PanicPage extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                       border: Border.all(
-                        color: Colors.grey,
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))
+                      borderRadius: const BorderRadius.all(Radius.circular(20))
                   ),
                   child: const Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Text("First and foremost, make sure to call the police",
-                        style: TextStyle(
-                            decoration: TextDecoration.none,
-                            fontSize: 20
-                        )
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 20,
+                        fontFamily: 'Bebas',
+                      ),
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
@@ -42,11 +54,11 @@ class PanicPage extends StatelessWidget {
                   width: 375,
                   height: 340,
                   decoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: const Color.fromRGBO(93, 93, 93, 0.18),
                       border: Border.all(
-                        color: Colors.grey,
+                        color: const Color.fromRGBO(93, 93, 93, 0.18),
                       ),
-                      borderRadius: BorderRadius.all(Radius.circular(20))
+                      borderRadius: const BorderRadius.all(Radius.circular(20))
                   ),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
@@ -60,55 +72,64 @@ class PanicPage extends StatelessWidget {
                               color: Colors.black,
                               decoration: TextDecoration.none,
                               fontSize: 20,
+                              fontFamily: 'Bebas',
                             )
                         ),
                         Container(height: 20),
-                        Text("• Date and time of the accident" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Date and time of the accident" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
-                        Text("• Personal information of the parties involved" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Personal information of the parties involved" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
-                        Text("• Statements from the drivers" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Statements from the drivers" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
-                        Text("• Statements from any witnesses" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Statements from any witnesses" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
-                        Text("• Information about the vehicles involved in the accident" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Information about the vehicles involved in the accident" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
-                        Text("• Description of the road and any other environmental issues" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Description of the road and any other environmental issues" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
-                        Text("• Any video or surveillance equipment that may have documented the accident" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Any video or surveillance equipment that may have documented the accident" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
-                        Text("• Injuries" ,
-                            style: TextStyle(color: Theme.of(context).colorScheme.primary,
-                                decoration: TextDecoration.none,
-                                fontSize: 15
+                        const Text("• Injuries" ,
+                            style: TextStyle(color: Color.fromRGBO(105, 105, 105, 1),
+                              decoration: TextDecoration.none,
+                              fontSize: 15,
+                              fontFamily: 'Bebas',
                             )
                         ),
                       ],

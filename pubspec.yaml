@@ -12,8 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+  restart_app: #latest version
   geolocator: #latest version
   geocoding: #latest version
+  image_picker: #latest version
   cupertino_icons: ^1.0.2
   firebase_auth: ^3.1.3
   cloud_firestore: ^2.5.3
@@ -25,7 +27,10 @@ dev_dependencies:
 
   flutter_lints: ^1.0.0
 
+
 flutter:
+  assets:
+    - assets/graphics/logo.png
 
   uses-material-design: true
 
