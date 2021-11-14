@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
                   child:
                   CupertinoButton(
                     color: Theme.of(context).colorScheme.background,
-                    child: const Text("File a Claim Now"),
+                    child: const Text("File a Claim Now", style: TextStyle(color: Colors.white)),
                     onPressed: () {
                       currentClaim = Claim();
                       Navigator.of(context).pushReplacementNamed('/Panic');
@@ -63,7 +63,7 @@ class LoginInfo extends StatelessWidget{
           const InputFields(),
           CupertinoButton(
               color: Theme.of(context).colorScheme.background,
-              child: const Text("Submit"),
+              child: const Text("Submit", style: TextStyle(color: Colors.white)),
               onPressed: () {
                 Navigator.of(context).pushReplacementNamed('/Main');
               }
@@ -103,15 +103,23 @@ class _InputFieldsState extends State<InputFields> {
               Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child:
                   CupertinoTextField(
+                    placeholderStyle: TextStyle(color: Colors.white),
                     placeholder: 'Username',
                     style: TextStyle(color: Colors.white),
+                    decoration: const BoxDecoration(
+                      color: Colors.grey
+                    )
                   )
               ),
               Padding(padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   child:
                   CupertinoTextField(
+                    placeholderStyle: TextStyle(color: Colors.white),
                     placeholder: 'Password',
                     style: TextStyle(color: Colors.white),
+                      decoration: const BoxDecoration(
+                          color: Colors.grey
+                      )
                   )
               ),
             ],

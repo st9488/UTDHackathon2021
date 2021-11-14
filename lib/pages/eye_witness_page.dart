@@ -28,10 +28,10 @@ class _EyewitnessState extends State<EyeWitness> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 60),),
             const Text(
               "Eyewitness",
-              style: TextStyle(fontSize: 30, color: Color.fromRGBO(0, 0, 0, 1), ),
+              style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.none),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
@@ -44,11 +44,11 @@ class _EyewitnessState extends State<EyeWitness> {
                   cursorColor: const Color.fromRGBO(255, 255, 255, 1),
                   style: TextStyle(color: Theme.of(context).colorScheme.surface),
                   decoration: const BoxDecoration(
-                      color: Color.fromRGBO(0, 0, 0, 0)
+                      color: Colors.grey
                   ),
                   textAlign: TextAlign.center,
                 ),
-                color: Theme.of(context).colorScheme.primary,
+                color: Colors.grey,
                 onPressed: () {},
               ),
             ),
@@ -63,11 +63,11 @@ class _EyewitnessState extends State<EyeWitness> {
                   autocorrect: false,
                   style: TextStyle(color: Theme.of(context).colorScheme.surface),
                   decoration: const BoxDecoration(
-                      color: Color.fromRGBO(0, 0, 0, 0)
+                      color: Colors.grey
                   ),
                   textAlign: TextAlign.center,
                 ),
-                color: Theme.of(context).colorScheme.primary,
+                color: Colors.grey,
                 onPressed: () {},
               ),
             ),
@@ -82,11 +82,11 @@ class _EyewitnessState extends State<EyeWitness> {
                   autocorrect: false,
                   style: TextStyle(color: Theme.of(context).colorScheme.surface),
                   decoration: const BoxDecoration(
-                      color: Color.fromRGBO(0, 0, 0, 0)
+                      color: Colors.grey
                   ),
                   textAlign: TextAlign.center,
                 ),
-                color: Theme.of(context).colorScheme.primary,
+                color: Colors.grey,
                 onPressed: () {},
               ),
             ),
@@ -96,12 +96,11 @@ class _EyewitnessState extends State<EyeWitness> {
               children: [
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
                 CupertinoButton(
-                    child: const Text(
+                    child: Text(
                       "Add Eyewitness",
-                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1),
-                      ),
+                      style: Theme.of(context).textTheme.bodyText1,
                       textAlign: TextAlign.center,
-                    ),
+                      ),
                     onPressed: () {
                       widget.list.add(Eyewitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text,));
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
@@ -111,9 +110,9 @@ class _EyewitnessState extends State<EyeWitness> {
               ],
             ),
             CupertinoButton(
-                child: const Text(
+                child: Text(
                   "No one else",
-                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
+                  style: Theme.of(context).textTheme.bodyText1,
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
