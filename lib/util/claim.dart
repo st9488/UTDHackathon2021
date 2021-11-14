@@ -4,6 +4,7 @@ import 'package:utd_hackathon2021/util/vehicle.dart';
 class Claim {
   List<List<Person>> everyone = [];
   List<List<Vehicle>> vehicles = [];
+  String accidentAddress = '';
 
   Claim();
 
