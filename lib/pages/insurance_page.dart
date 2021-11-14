@@ -28,60 +28,81 @@ class _InsurancePageState extends State<InsurancePage>{
         children: [
           const Background(),
           Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Padding(padding: EdgeInsets.symmetric(vertical: 60)),
                 const Text('Insurance Information',style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 30, color: Colors.red)
                 ),
                 const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-                const Text('Insurance Company',
-                    style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.red)
-                ),
                 SizedBox(
-                  width: 250,
-                  child: CupertinoTextField(
-                    placeholderStyle: const TextStyle(color: Colors.white),
-                    placeholder: 'Company Name',
-                    style: const TextStyle(color: Colors.white),
-                    onChanged: (String value)
-                    {
-                      _textController1.value;
-                    },
-                    decoration: const BoxDecoration(
-                        color: Colors.grey
+                  width: 300,
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        border: Border.all(
+                          color: Colors.grey,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(20))
                     ),
-                    textAlign: TextAlign.center,
+                    child: Padding(padding: EdgeInsets.symmetric(vertical: 20),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                           SizedBox(
+                            width: 200,
+                            child: CupertinoTextField(
+                            placeholderStyle: const TextStyle(color: Colors.black),
+                            placeholder: 'Company Name',
+                            style: const TextStyle(color: Colors.black),
+                            onChanged: (String value)
+                            {
+                              _textController1.value;
+                            },
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(
+                                color: Colors.white,
+                                ),
+                                borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                textAlign: TextAlign.center,
+                            ),
+                            ),
+                            const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+                            SizedBox(
+                              width: 200,
+                                child: CupertinoTextField(
+                                placeholderStyle: const TextStyle(color: Colors.black),
+                                placeholder: 'Insurance Number',
+                                style: const TextStyle(color: Colors.black),
+                                onChanged: (String value) {
+                                  _textController2.value;
+                                },
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                        color: Colors.white,
+                                      ),
+                                      borderRadius: const BorderRadius.all(Radius.circular(10))),
+                            textAlign: TextAlign.center,
+                            ),
+                          ),
+                          const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
+                          SizedBox(
+                            width: 200,
+                            child: CupertinoButton(
+                                child: const Text("Continue", style: TextStyle(color: Colors.white)),
+                                onPressed: (){
+                                currentClaim.insurance.companyName = _textController1.text;
+                                currentClaim.insurance.number = _textController2.text;
+                                Navigator.of(context).pushReplacementNamed('/Eyewitness');
+                            },
+                        color: Colors.red
+                            ),
+                          )
+                        ]
+                    )
                   ),
-                ),
-                const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-                const Text('Insurance Number',
-                  style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.red),
-                ),
-                SizedBox(
-                  width: 250,
-                  child: CupertinoTextField(
-                    placeholderStyle: const TextStyle(color: Colors.white),
-                    placeholder: 'Insurance Number',
-                    style: const TextStyle(color: Colors.white),
-                    onChanged: (String value)
-                    {
-                      _textController2.value;
-                    },
-                    decoration: const BoxDecoration(
-                        color: Colors.grey
-                    ),
-                    textAlign: TextAlign.center,
                   ),
-                ),
-                const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-                CupertinoButton(
-                    child: const Text("Continue", style: TextStyle(color: Colors.white)),
-                    onPressed: (){
-                      currentClaim.insurance.companyName = _textController1.text;
-                      currentClaim.insurance.number = _textController2.text;
-                      Navigator.of(context).pushReplacementNamed('/Eyewitness');
-                    },
-                    color: Colors.red
                 )
               ]
           )
