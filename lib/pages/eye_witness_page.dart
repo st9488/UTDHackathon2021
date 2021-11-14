@@ -1,21 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
-import 'package:utd_hackathon2021/pages/passenger_information.dart';
 import 'package:utd_hackathon2021/util/eye_witness.dart';
 
-import 'other_driver_information.dart';
-
-class DriverInformation extends StatefulWidget {
-  const DriverInformation({Key? key, required this.list}) : super(key: key);
+class Eyewitness extends StatefulWidget {
+  const Eyewitness({Key? key, required this.list}) : super(key: key);
 
   final List<EyeWitness> list;
 
   @override
-  _DriverInformationState createState() => _DriverInformationState();
+  _EyewitnessState createState() => _EyewitnessState();
 }
 
-class _DriverInformationState extends State<DriverInformation> {
+class _EyewitnessState extends State<Eyewitness> {
 
   final TextEditingController _text1 = TextEditingController(text: "First");
   final TextEditingController _text2 = TextEditingController(text: "Last");
@@ -99,24 +96,15 @@ class _DriverInformationState extends State<DriverInformation> {
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
                 CupertinoButton(
                     child: const Text(
-                      "Add Passenger",
+                      "Add Eyewitness",
                       style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1),
                       ),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
+                      widget.list.add(EyeWitness(firstName: _text1.text, lastName: _text2.text, phoneNumber: _text3.text));
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                          PassengerInformation(list: [],)));
-                    }),
-                const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
-                CupertinoButton(
-                    child: const Text(
-                      "Add Driver",
-                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherDriverInformation()));
+                          Eyewitness(list: widget.list,)));
                     }),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
               ],

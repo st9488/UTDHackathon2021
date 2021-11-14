@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/pages/driver_information.dart';
+import 'package:utd_hackathon2021/pages/eye_witness_page.dart';
 import 'package:utd_hackathon2021/pages/insurance_page.dart';
 import 'package:utd_hackathon2021/pages/login_page.dart';
 import 'package:utd_hackathon2021/pages/main_page.dart';
@@ -80,6 +81,8 @@ class MyApp extends StatelessWidget {
         "/VehicleInformation": (context) => const VehiclePage(),
         // Route for InsuranceInformation
         "/InsuranceInformation": (context) => const InsurancePage(),
+        // Route for Eyewitness
+        "/Eyewitness": (context) => const Eyewitness(list: []),
 
       },
     );

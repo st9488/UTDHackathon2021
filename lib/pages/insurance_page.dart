@@ -54,7 +54,7 @@ class _InsurancePageState extends State<InsurancePage>{
                 CupertinoButton(
                     child: const Text("Continue"),
                     onPressed: (){
-
+                      Navigator.of(context).pushReplacementNamed('/Eyewitness');
                     },
                     color: Colors.red
                 )
