@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\mmchi\\AndroidStudioProjects\\UTDHackathon2021\\build\\image_picker\\intermediates\\merged_res\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\mmchi\\.gradle\\caches\\transforms-3\\69c67ca900e0542e6288a548d9174ea1\\transformed\\core-1.1.0\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmchi\\AndroidStudioProjects\\UTDHackathon2021\\build\\image_picker\\intermediates\\merged_res\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\mmchi\\.gradle\\caches\\transforms-3\\69c67ca900e0542e6288a548d9174ea1\\transformed\\core-1.1.0\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmchi\\AndroidStudioProjects\\UTDHackathon2021\\build\\image_picker\\intermediates\\merged_res\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\mmchi\\.gradle\\caches\\transforms-3\\69c67ca900e0542e6288a548d9174ea1\\transformed\\core-1.1.0\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\mmchi\\AndroidStudioProjects\\UTDHackathon2021\\build\\image_picker\\intermediates\\merged_res\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\mmchi\\.gradle\\caches\\transforms-3\\69c67ca900e0542e6288a548d9174ea1\\transformed\\core-1.1.0\\res\\drawable\\notification_bg.xml"
+    }
+]

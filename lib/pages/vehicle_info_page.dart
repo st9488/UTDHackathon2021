@@ -35,7 +35,7 @@ class _VehiclePageState extends State<VehiclePage> {
         children: [
           const Padding(padding: EdgeInsets.symmetric(vertical: 30),),
           const Text(
-            'Other Vehicle Information',
+              'Other Vehicle Information',
             style: TextStyle(color: Colors.red, fontSize: 32, decoration: TextDecoration.none, fontFamily: "Bebas"),
             textAlign: TextAlign.center,
 
