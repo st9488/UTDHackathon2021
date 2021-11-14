@@ -9,8 +9,11 @@ import 'package:utd_hackathon2021/pages/main_page.dart';
 import 'package:utd_hackathon2021/pages/panic_page.dart';
 import 'package:utd_hackathon2021/pages/tips_page.dart';
 import 'package:utd_hackathon2021/pages/vehicle_info_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
