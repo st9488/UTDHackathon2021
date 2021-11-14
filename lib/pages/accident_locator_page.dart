@@ -66,6 +66,16 @@ class _AccidentLocatorState extends State<AccidentLocator> {
       alignment: Alignment.center,
       children: [
         const Background(),
+        Container(
+          alignment: Alignment.topLeft,
+          padding: const EdgeInsets.only(left: 10, top: 35),
+          child: GestureDetector(
+            child: const Icon(CupertinoIcons.arrow_left_circle, color: Colors.black, size: 50,),
+            onTap: () {
+              Navigator.of(context).pushReplacementNamed('/Eyewitness');
+            },
+          ),
+        ),
         Padding(
           padding: const EdgeInsets.fromLTRB(40, 40, 40, 0),
           child:
@@ -102,24 +112,40 @@ class _AccidentLocatorState extends State<AccidentLocator> {
               ),
 
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: const TextStyle(color:Colors.white),
                 placeholder: 'Enter Address',
                 controller: addressController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
               )),
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: const TextStyle(color:Colors.white),
                 placeholder: 'Enter City',
                 controller: cityController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
               )),
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: const TextStyle(color:Colors.white),
                 placeholder: 'Enter State',
                 controller: stateController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
               )),
               Padding(padding: const EdgeInsets.fromLTRB(0, 20, 0, 0), child: CupertinoTextField(
+                placeholderStyle: const TextStyle(color:Colors.white),
                 placeholder: 'Enter Zip Code',
                 controller: zipController,
                 style: const TextStyle(color: Colors.white),
+                decoration: const BoxDecoration(
+                    color: Colors.grey
+                ),
               )),
 
               Padding(padding: const EdgeInsets.fromLTRB(0, 40, 0, 0), child: CupertinoButton(
@@ -149,7 +175,7 @@ class _AccidentLocatorState extends State<AccidentLocator> {
                   onPressed: (){
                     print("Confirmed Location: $address");
                     currentClaim.accidentAddress = address;
-                    Navigator.of(context).pushReplacementNamed('/CameraPage');
+                    Navigator.of(context).pushReplacementNamed('/Camera ');
                   }
               ),
             ],
@@ -159,4 +185,3 @@ class _AccidentLocatorState extends State<AccidentLocator> {
     );
   }
 }
-
