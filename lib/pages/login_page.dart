@@ -18,27 +18,58 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
-                  'ClaimSafe',
-                  style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue'),
-                ),
+
                 Container(
-                  height: 30,
-                ),
-                SizedBox(
-                  width: 250,
-                  child: CupertinoButton(
-                    color: Theme.of(context).colorScheme.background,
-                    child: const Text("File a Claim Now", style: TextStyle(color: Colors.white)),
-                    onPressed: () {
-                      Navigator.of(context).pushReplacementNamed('/Panic');
-                    },
+                  width: 325,
+                  height: 170,
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      border: Border.all(
+                        color: Colors.grey,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))
+                  ),
+                  //color: Colors.grey,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 10,
+                      ),
+                      const Text(
+                      'ClaimSafe',
+                      style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue'),
+                    ),
+                    Container(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 250,
+                      child: CupertinoButton(
+                        color: Theme.of(context).colorScheme.background,
+                        child: const Text("File a Claim Now", style: TextStyle(color: Colors.white)),
+                        onPressed: () {
+                          Navigator.of(context).pushReplacementNamed('/Panic');
+                        },
+                      ),
+                    ),
+                    ],
                   ),
                 ),
+                Container(
+                  height: 40,
+                ),
 
-                const Padding(padding: EdgeInsets.fromLTRB(0, 40, 0, 0),
-                  child:
-                  LoginInfo(),
+                Container(
+                    width: 325,
+                    height: 380,
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        border: Border.all(
+                          color: Colors.grey,
+                        ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: LoginInfo()
+
                 ),
               ],
             ),
@@ -86,10 +117,20 @@ class _LoginInfoState extends State<LoginInfo> {
                 SizedBox(
                   width: 300,
                   height: 45,
+
                   child: CupertinoTextField(
                     controller: controllerUserSignIn,
                     placeholder: 'Username',
-                    style: const TextStyle(color: Colors.white),
+                    placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                        border: Border.all(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(10))
+
+                    ),
+                    style: const TextStyle(color: Colors.black),
                   ),
                 ),
 
@@ -103,7 +144,16 @@ class _LoginInfoState extends State<LoginInfo> {
                   child: CupertinoTextField(
                     controller: controllerPassSignIn,
                     placeholder: 'Password',
-                    style: const TextStyle(color: Colors.white),
+                    placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Colors.white,
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(10))
+
+                    ),
+                    style: const TextStyle(color: Colors.black),
 
                   ),
                 ),
@@ -130,7 +180,7 @@ class _LoginInfoState extends State<LoginInfo> {
             ),
 
             Container(
-              height: 30,
+              height: 25,
             ),
 
 
