@@ -13,7 +13,7 @@ class PanicPage extends StatelessWidget {
         children: [
           const Background(),
           SizedBox(
-            width: 325,
+            width: 350,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -31,7 +31,7 @@ class PanicPage extends StatelessWidget {
                     child: Text("First and foremost, make sure to call the police",
                         style: TextStyle(
                             decoration: TextDecoration.none,
-                            fontSize: 25
+                            fontSize: 20
                         )
                     ),
                   ),
@@ -39,8 +39,8 @@ class PanicPage extends StatelessWidget {
                 Container(height: 20,),
 
                 Container(
-                  width: 325,
-                  height: 320,
+                  width: 375,
+                  height: 340,
                   decoration: BoxDecoration(
                       color: Colors.grey,
                       border: Border.all(
@@ -51,6 +51,7 @@ class PanicPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                     child: Column(
+                      //mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(height: 15),
@@ -128,7 +129,7 @@ class PanicPage extends StatelessWidget {
                           onPressed: () {}
                       ),
                     ),
-                    Container(height: 30),
+                    Container(height: 15),
                     SizedBox(
                       width: 275,
                       height: 50,
