@@ -131,7 +131,8 @@ class _DriverInformationState extends State<DriverInformation> {
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherDriverInformation()));
+                  // TODO IMPLEMENT DATABASE CALL
+                  Navigator.of(context).pushReplacementNamed('/VehicleInformation');
                 }),
             const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
           ],          

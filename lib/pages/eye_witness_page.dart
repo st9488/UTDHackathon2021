@@ -2,20 +2,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
 import 'package:utd_hackathon2021/pages/passenger_information.dart';
-import 'package:utd_hackathon2021/util/person.dart';
+import 'package:utd_hackathon2021/util/eye_witness.dart';
 
-class OtherDriverInformation extends StatefulWidget {
-  const OtherDriverInformation({Key? key}) : super(key: key);
+import 'other_driver_information.dart';
+
+class DriverInformation extends StatefulWidget {
+  const DriverInformation({Key? key, required this.list}) : super(key: key);
+
+  final List<EyeWitness> list;
 
   @override
-  _OtherDriverInformationState createState() => _OtherDriverInformationState();
+  _DriverInformationState createState() => _DriverInformationState();
 }
 
-class _OtherDriverInformationState extends State<OtherDriverInformation> {
+class _DriverInformationState extends State<DriverInformation> {
 
   final TextEditingController _text1 = TextEditingController(text: "First");
   final TextEditingController _text2 = TextEditingController(text: "Last");
-  final TextEditingController _text3 = TextEditingController(text: "Gender");
+  final TextEditingController _text3 = TextEditingController(text: "Phone Number");
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +32,8 @@ class _OtherDriverInformationState extends State<OtherDriverInformation> {
           children: [
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             const Text(
-              "Other Vehicle",
-              style: TextStyle(fontSize: 30, color: Color.fromRGBO(0, 0, 0, 1)),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 10),),
-            const Text(
-              "Who was Driving",
-              style: TextStyle(fontSize: 26, color: Color.fromRGBO(0, 0, 0, 1)),
+              "Eyewitness",
+              style: TextStyle(fontSize: 30, color: Color.fromRGBO(0, 0, 0, 1), ),
             ),
             const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
@@ -101,26 +100,38 @@ class _OtherDriverInformationState extends State<OtherDriverInformation> {
                 CupertinoButton(
                     child: const Text(
                       "Add Passenger",
-                      style: TextStyle(fontSize: 30, color: Color.fromRGBO(0, 0, 0, 1)),
+                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1),
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                          PassengerInformation(list: [Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)],)));
+                          PassengerInformation(list: [],)));
                     }),
+                const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
                 CupertinoButton(
                     child: const Text(
-                      "No One Else",
-                      style: TextStyle(fontSize: 30, color: Color.fromRGBO(0, 0, 0, 1)),
+                      "Add Driver",
+                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
-                      // TODO IMPLEMENT DATABASE CALL
-                      Navigator.of(context).pushReplacementNamed('/VehicleInformation');
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherDriverInformation()));
                     }),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
               ],
-            )
+            ),
+            CupertinoButton(
+                child: const Text(
+                  "No one else",
+                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () {
+                  // TODO IMPLEMENT DATABASE CALL
+                  Navigator.of(context).pushReplacementNamed('/');
+                }),
+            const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
           ],
         )
       ],

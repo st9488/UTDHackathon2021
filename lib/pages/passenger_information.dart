@@ -123,6 +123,18 @@ class _PassengerInformationState extends State<PassengerInformation> {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const OtherDriverInformation()));
                 }),
+            CupertinoButton(
+                child: const Text(
+                  "No One Else",
+                  style: TextStyle(
+                      fontSize: 30,
+                      color: Color.fromRGBO(0, 0, 0, 1)),
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () {
+                  // TODO IMPLEMENT DATABASE CALL
+                  Navigator.of(context).pushReplacementNamed('/VehicleInformation');
+                }),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
             ),
