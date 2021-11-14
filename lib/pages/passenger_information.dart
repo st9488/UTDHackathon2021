@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
+import 'package:utd_hackathon2021/util/globals.dart';
 import 'package:utd_hackathon2021/util/person.dart';
 
 import 'other_driver_information.dart';
@@ -109,6 +110,22 @@ class _PassengerInformationState extends State<PassengerInformation> {
             ),
             CupertinoButton(
                 child: const Text(
+                  "Add Passenger",
+                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                onPressed: () {
+                  widget.list.add(Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text));
+                  print("This is the List of Persons: ${currentClaim.everyone}");
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+                      PassengerInformation(list: widget.list,)));
+                }),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+            ),
+            CupertinoButton(
+                child: const Text(
                   "Add Driver",
                   style: TextStyle(
                       fontSize: 30,
@@ -120,9 +137,13 @@ class _PassengerInformationState extends State<PassengerInformation> {
                       isMale: _text3.text,
                       lastName: _text2.text,
                       firstName: _text1.text));
+                  print("This is the List of Persons: ${currentClaim.everyone}");
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const OtherDriverInformation()));
+                      builder: (context) => const OtherDriverInformation(list: [],)));
                 }),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10),
+            ),
             CupertinoButton(
                 child: const Text(
                   "No One Else",
@@ -132,7 +153,8 @@ class _PassengerInformationState extends State<PassengerInformation> {
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
-                  // TODO IMPLEMENT DATABASE CALL
+                  currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                  print("This is the List of Persons: ${currentClaim.everyone}");
                   Navigator.of(context).pushReplacementNamed('/VehicleInformation');
                 }),
             const Padding(

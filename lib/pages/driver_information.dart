@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
 import 'package:utd_hackathon2021/pages/passenger_information.dart';
+import 'package:utd_hackathon2021/util/globals.dart';
 import 'package:utd_hackathon2021/util/person.dart';
 
 import 'other_driver_information.dart';
@@ -109,7 +110,7 @@ class _DriverInformationState extends State<DriverInformation> {
                     ),
                     onPressed: () {
                       Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                          PassengerInformation(list: [Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)],)));
+                          PassengerInformation(list: [Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)])));
                     }),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
                 CupertinoButton(
@@ -119,7 +120,9 @@ class _DriverInformationState extends State<DriverInformation> {
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherDriverInformation()));
+                      currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                      print("This is the List of Persons: ${currentClaim.everyone}");
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherDriverInformation(list: [],)));
                     }),
                 const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
               ],
@@ -131,7 +134,8 @@ class _DriverInformationState extends State<DriverInformation> {
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {
-                  // TODO IMPLEMENT DATABASE CALL
+                  currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                  print("This is the List of Persons: ${currentClaim.everyone}");
                   Navigator.of(context).pushReplacementNamed('/VehicleInformation');
                 }),
             const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
