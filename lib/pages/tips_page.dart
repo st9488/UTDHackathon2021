@@ -57,9 +57,9 @@ class _TipsPageState extends State<TipsPage>{
                                       "  b. Personal information of parties\n\t\tinvolved\n" +
                                       "  c. Statements from the drivers\n" +
                                       "  d. Statements from any witnesses\n" +
-                                      "  e. Information about the vehicles involved \t\tin the accident\n" +
-                                      "  f. Description of the road and any other \n\t\tenvironmental issues\n" +
-                                      "  g. Any video or surveillance evidence \n\t\tabout the accident\n" +
+                                      "  e. Information about the vehicles \t\tinvolved in the accident\n" +
+                                      "  f. Description of the road and any \t\tother environmental issues\n" +
+                                      "  g. Any video or surveillance \t\t\t\t\t\tevidence about the accident\n" +
                                       "  h. Any injuries\n" +
                                       "\n3. Do not sign any documents unless it is for the police or your insurance agent.\n" +
                                       "\n4. Be polite, but don't tell anyone the accident was your fault, even if you think it was", style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.white)

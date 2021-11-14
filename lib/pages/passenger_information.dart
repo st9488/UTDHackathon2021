@@ -30,122 +30,175 @@ class _PassengerInformationState extends State<PassengerInformation> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
-            ),
-            const Text(
+              padding: EdgeInsets.symmetric(vertical: 40),),
+             const Text(
               "Passengers",
               style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.none),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
-            ),
+              padding: EdgeInsets.symmetric(vertical: 10),),
             const Text(
               "Your Vehicle",
-              style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.none),
+              style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1),
+                  decoration: TextDecoration.none),
             ),
             const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
-            ),
+              padding: EdgeInsets.symmetric(vertical: 20),),
             SizedBox(
-              width: 250,
-                child: CupertinoTextField(
-                  controller: _text1,
+              width: 300,
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.grey,
+                    border: Border.all(
+                      color: Colors.grey,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(20))
+                ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(height: 15),
+                  SizedBox(
+                    width: 200,
+                    child: CupertinoTextField(
+                      controller: _text1,
+                      autocorrect: false,
+                      cursorColor: const Color.fromRGBO(255, 255, 255, 1),
+                      style: TextStyle(color: Colors.grey),
+                      decoration: const BoxDecoration(
+                          color: Colors.white
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Padding(padding: EdgeInsets.symmetric(vertical: 10),),
+                  SizedBox(
+                  width: 200,
+                  child: CupertinoTextField(
+                  controller: _text2,
                   autocorrect: false,
                   cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                  style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                  decoration: const BoxDecoration(
-                      color: Colors.grey
-                  ),
+                    style: TextStyle(color: Colors.grey),
+                    decoration: const BoxDecoration(
+                        color: Colors.white
+                    ),
                   textAlign: TextAlign.center,
-                ),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-            SizedBox(
-              width: 250,
-              child: CupertinoTextField(
-                controller: _text2,
-                autocorrect: false,
-                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
-                ),
-                textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Padding(padding: EdgeInsets.symmetric(vertical: 10),),
+                  SizedBox(
+                    width: 200,
+                    child: CupertinoTextField(
+                      controller: _text3,
+                      autocorrect: false,
+                      cursorColor: const Color.fromRGBO(255, 255, 255, 1),
+                      style: TextStyle(color: Colors.grey),
+                      decoration: const BoxDecoration(
+                          color: Colors.white
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                  ),
+                ]
+              )
+              ),
               ),
             ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
+            const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
             SizedBox(
-              width: 250,
-              child: CupertinoTextField(
-                controller: _text3,
-                autocorrect: false,
-                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
-                ),
-                textAlign: TextAlign.center,
+              width: 300,
+              child: Container(
+              decoration: BoxDecoration(
+              color: Colors.grey,
+              border: Border.all(
+              color: Colors.grey,
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            CupertinoButton(
+              borderRadius: BorderRadius.all(Radius.circular(20))
+              ),
+              child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 10),
+              child: Column(
+                children:[
+              SizedBox(
+                width: 250,
+                height: 50,
+                child: CupertinoButton(
                 child: const Text(
-                  "Add Passenger",
-                  style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1),
-                      decoration: TextDecoration.underline,
-                  ),
+                "Add Passenger",
+                style: TextStyle(fontSize: 18, color: Color.fromRGBO(255, 255, 255, 1),
+                  decoration: TextDecoration.none,
+                ),
                   textAlign: TextAlign.center,
                 ),
-                onPressed: () {
+                  color: Colors.red,
+                  onPressed: () {
                   widget.list.add(Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text));
                   print("This is the List of Persons: ${currentClaim.everyone}");
                   Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                      PassengerInformation(list: widget.list,)));
-                }),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            CupertinoButton(
-                child: const Text(
-                  "Add Driver",
-                  style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1),
-                    decoration: TextDecoration.underline,
-                  ),
-                      textAlign: TextAlign.center,
+                  PassengerInformation(list: widget.list,)));
+                  }),
+              ),
+                const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
                 ),
-                onPressed: () {
-                  widget.list.add(Person(
-                      isMale: _text3.text,
-                      lastName: _text2.text,
-                      firstName: _text1.text));
-                  print("This is the List of Persons: ${currentClaim.everyone}");
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const OtherDriverInformation(list: [],)));
-                }),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-            ),
-            CupertinoButton(
-                child: const Text(
-                  "No One Else",
-                  style: TextStyle(fontSize: 30, color: Color.fromRGBO(255, 0, 0, 1),
-                    decoration: TextDecoration.underline,
+                SizedBox(
+                  width: 250,
+                  height: 50,
+                  child: CupertinoButton(
+                  child: const Text(
+                  "Add Driver",
+                  style: TextStyle(fontSize: 18, color: Color.fromRGBO(255, 255, 255, 1),
+                  decoration: TextDecoration.none,
                   ),
                   textAlign: TextAlign.center,
-                ),
-                onPressed: () {
-                  currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                  ),
+                  color: Colors.red,
+                  onPressed: () {
+                  widget.list.add(Person(
+                  isMale: _text3.text,
+                  lastName: _text2.text,
+                  firstName: _text1.text));
                   print("This is the List of Persons: ${currentClaim.everyone}");
-                  Navigator.of(context).pushReplacementNamed('/VehicleInformation');
-                }),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-            ),
+                  Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const OtherDriverInformation(list: [],)));
+                  }),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                ),
+                SizedBox(
+                  width: 250,
+                  height: 50,
+                  child: CupertinoButton(
+                    child: const Text(
+                      "No One Else",
+                    style: TextStyle(fontSize: 18, color: Color.fromRGBO(255, 255, 255, 1),
+                    decoration: TextDecoration.none,
+                    ),
+                    textAlign: TextAlign.center,
+                   ),
+                      color: Colors.red,
+                      onPressed: () {
+                      currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                      print("This is the List of Persons: ${currentClaim.everyone}");
+                      Navigator.of(context).pushReplacementNamed('/VehicleInformation');
+                    }),
+                ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),)
+                ]
+              ),
+              )
+              ),
+            )
           ],
         )
       ],
