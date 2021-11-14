@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:utd_hackathon2021/UI/background.dart';
+import 'package:utd_hackathon2021/util/globals.dart';
 
 class InsurancePage extends StatefulWidget{
   const InsurancePage({Key? key}) : super(key: key);
@@ -54,6 +55,8 @@ class _InsurancePageState extends State<InsurancePage>{
                 CupertinoButton(
                     child: const Text("Continue"),
                     onPressed: (){
+                      currentClaim.insurance.companyName = _textController1.text;
+                      currentClaim.insurance.number = _textController2.text;
                       Navigator.of(context).pushReplacementNamed('/Eyewitness');
                     },
                     color: Colors.red
