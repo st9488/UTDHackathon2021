@@ -16,118 +16,199 @@ class DriverInformation extends StatefulWidget {
 
 class _DriverInformationState extends State<DriverInformation> {
 
-  final TextEditingController _text1 = TextEditingController(text: "First");
-  final TextEditingController _text2 = TextEditingController(text: "Last");
-  final TextEditingController _text3 = TextEditingController(text: "Gender");
+  final TextEditingController _text1 = TextEditingController();
+  final TextEditingController _text2 = TextEditingController();
+  final TextEditingController _text3 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         const Background(),
-      
+
         Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-            const Text(
-              "Your Vehicle",
-              style: TextStyle(fontSize: 30, color: Colors.red, decoration: TextDecoration.none),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 10),),
-            const Text(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const Text(
+                "Your Vehicle",
+                style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40),
+              ),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 5),),
+              const Text(
                 "Who was Driving?",
-              style: TextStyle(fontSize: 26, color: Colors.red, decoration: TextDecoration.none),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-            SizedBox(
-              width: 250,
-                  child: CupertinoTextField(
-                    controller: _text1,
-                    autocorrect: false,
-                    cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                    style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                    decoration: const BoxDecoration(
-                      color: Colors.grey
-                    ),
-                    textAlign: TextAlign.center,
+                style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 30),
+              ),
+              const Padding(padding: EdgeInsets.symmetric(vertical: 10),),
+              SizedBox(
+                width: 300,
+                height: 200,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      border: Border.all(
+                        color: Colors.grey,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))
                   ),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-            SizedBox(
-              width: 250,
-              child: CupertinoTextField(
-                controller: _text2,
-                autocorrect: false,
-                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            width: 250,
+                            child: CupertinoTextField(
+                              controller: _text1,
+                              placeholder: 'First Name',
+                              placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                              autocorrect: false,
+                              cursorColor: const Color.fromRGBO(0, 0, 0, 1),
+                              style: TextStyle(color: Colors.black),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                  ),
+                                  borderRadius: const BorderRadius.all(Radius.circular(10))),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                          ),
+                          SizedBox(
+                            width: 250,
+                            child: CupertinoTextField(
+                              controller: _text2,
+                              placeholder: 'Last Name',
+                              placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                              cursorColor: const Color.fromRGBO(0, 0, 0, 1),
+                              style: TextStyle(color: Colors.black),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                  ),
+                                  borderRadius: const BorderRadius.all(Radius.circular(10))),
+                              textAlign: TextAlign.center,
+                            ),
+
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                          ),
+                          SizedBox(
+                            width: 250,
+                            child: CupertinoTextField(
+                              controller: _text3,
+                              placeholder: 'Gender',
+                              placeholderStyle: TextStyle(color: Theme.of(context).colorScheme.onSecondary),
+                              cursorColor: const Color.fromRGBO(0, 0, 0, 1),
+                              style: TextStyle(color: Colors.black),
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  border: Border.all(
+                                    color: Colors.white,
+                                  ),
+                                  borderRadius: const BorderRadius.all(Radius.circular(10))),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          //const Padding(
+                          //  padding: EdgeInsets.symmetric(vertical: 20),
+                          //),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 10),
+                          ),
+
+                        ]),
+                  ),
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-            SizedBox(
-              width: 250,
-              child: CupertinoTextField(
-                controller: _text3,
-                autocorrect: false,
-                cursorColor: const Color.fromRGBO(255, 255, 255, 1),
-                style: TextStyle(color: Theme.of(context).colorScheme.surface),
-                decoration: const BoxDecoration(
-                    color: Colors.grey
+
+              Container(height: 30),
+
+
+              SizedBox(
+                width: 300,
+                height: 300,
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      border: Border.all(
+                        color: Colors.grey,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(20))
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+
+                      SizedBox(
+                        width: 240,
+                        height: 65,
+                        child: CupertinoButton(
+                            color: Theme.of(context).colorScheme.background,
+                            child: const Text(
+                              "Add Passenger",
+                              style: TextStyle(fontSize: 15, color: Color.fromRGBO(255, 255, 255, 1),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
+                                  PassengerInformation(list: [Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)])));
+                            }),
+                      ),
+
+                      const Padding(padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),),
+
+                      SizedBox(
+                        width: 240,
+                        height: 65,
+                        child: CupertinoButton(
+                            color: Theme.of(context).colorScheme.background,
+                            child: const Text(
+                              "Add Driver",
+                              style: TextStyle(fontSize: 15, color: Color.fromRGBO(255, 255, 255, 1)),
+                              textAlign: TextAlign.center,
+                            ),
+                            onPressed: () {
+                              currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                              print("This is the List of Persons: ${currentClaim.everyone}");
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherDriverInformation(list: [],)));
+                            }),
+                      ),
+                      const Padding(padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),),
+                      SizedBox(
+                        width: 240,
+                        height: 65,
+                        child: CupertinoButton(
+                            color: Theme.of(context).colorScheme.background,
+                            child: const Text(
+                              "No one else",
+                              style: TextStyle(fontSize: 15, color: Color.fromRGBO(255, 255, 255, 1)),
+                              textAlign: TextAlign.center,
+                            ),
+                            onPressed: () {
+                              currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
+                              print("This is the List of Persons: ${currentClaim.everyone}");
+                              Navigator.of(context).pushReplacementNamed('/VehicleInformation');
+                            }),
+                      ),
+                      const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
+                    ],
+                  ),
                 ),
-                textAlign: TextAlign.center,
               ),
-            ),
-            const Padding(padding: EdgeInsets.symmetric(vertical: 20),),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
-                CupertinoButton(
-                    child: const Text(
-                      "Add Passenger",
-                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1),
-                          decoration: TextDecoration.underline),
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) =>
-                          PassengerInformation(list: [Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)])));
-                    }),
-                const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
-                CupertinoButton(
-                    child: const Text(
-                      "Add Driver",
-                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.underline),
-                      textAlign: TextAlign.center,
-                    ),
-                    onPressed: () {
-                      currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
-                      print("This is the List of Persons: ${currentClaim.everyone}");
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const OtherDriverInformation(list: [],)));
-                    }),
-                const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
-              ],
-            ),
-            CupertinoButton(
-                child: const Text(
-                  "No one else",
-                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.underline),
-                  textAlign: TextAlign.center,
-                ),
-                onPressed: () {
-                  currentClaim.everyone.add([Person(isMale: _text3.text, firstName: _text1.text, lastName: _text2.text)]);
-                  print("This is the List of Persons: ${currentClaim.everyone}");
-                  Navigator.of(context).pushReplacementNamed('/VehicleInformation');
-                }),
-            const Padding(padding: EdgeInsets.symmetric(horizontal: 10),),
-          ],          
+            ]
         )
       ],
     );
   }
-  
+
 }

@@ -40,7 +40,7 @@ class _TipsPageState extends State<TipsPage>{
                   child: Column(
                     children:const [
                       Padding(padding: EdgeInsets.symmetric(vertical: 15)),
-                      Text("IMPORTANT TIPS", style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red)),
+                      Text("IMPORTANT TIPS", textAlign: TextAlign.center, style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 40, color: Colors.red,),),
                       Padding(padding: EdgeInsets.symmetric(vertical: 10)),
                       Expanded(
                           flex: 1,
