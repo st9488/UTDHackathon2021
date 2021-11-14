@@ -50,7 +50,8 @@ class _TipsPageState extends State<TipsPage>{
               child: Text("Next"),
               onPressed: (){
 
-              }
+              },
+              color: Colors.red
           )
         ],
         )
