@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  geolocator: #latest version
+  geocoding: #latest version
 
   restart_app: #latest version
   geolocator: #latest version
