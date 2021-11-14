@@ -62,7 +62,7 @@ class _TipsPageState extends State<TipsPage>{
                                       "  g. Any video or surveillance evidence \n\t\tabout the accident\n" +
                                       "  h. Any injuries\n" +
                                       "\n3. Do not sign any documents unless it is for the police or your insurance agent.\n" +
-                                      "\n4. Be polite, but don't tell anyone the accident was your fault, even if you think it was", style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.red)
+                                      "\n4. Be polite, but don't tell anyone the accident was your fault, even if you think it was", style: TextStyle(decoration: TextDecoration.none, fontFamily: 'BabasNeue', fontSize: 20, color: Colors.white)
                                   ,),
                               )
                           )
