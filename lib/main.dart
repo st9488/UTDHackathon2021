@@ -61,7 +61,8 @@ class MyApp extends StatelessWidget {
           headline1: TextStyle(fontSize: 36, color: Color.fromRGBO(0, 0, 0, 1)),
           headline2: TextStyle(fontSize: 26, color: Color.fromRGBO(0, 0, 0, 1)),
           headline3: TextStyle(fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1)),
-          bodyText1: TextStyle(fontSize: 12, color: Color.fromRGBO(0, 0, 0, 1)),
+          bodyText1: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1)),
+          bodyText2: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 255, 255, 1)),
 
         )
       ),
