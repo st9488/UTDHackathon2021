@@ -83,7 +83,7 @@ class _EyewitnessState extends State<EyeWitness> {
                 CupertinoButton(
                     child: Text(
                       "Add Eyewitness",
-                      style: Theme.of(context).textTheme.bodyText1,
+                      style: TextStyle(fontSize: 30, color: Colors.red, decoration: TextDecoration.underline),
                       textAlign: TextAlign.center,
                       ),
                     onPressed: () {
@@ -97,7 +97,7 @@ class _EyewitnessState extends State<EyeWitness> {
             CupertinoButton(
                 child: Text(
                   "No one else",
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: TextStyle(fontSize: 30, color: Colors.red, decoration: TextDecoration.underline),
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {

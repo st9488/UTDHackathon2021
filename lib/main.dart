@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-//import 'package:utd_hackathon2021/pages/driver_information.dart';
+import 'package:utd_hackathon2021/pages/accident_locator_page.dart';
+import 'package:utd_hackathon2021/pages/camera_page.dart';
+import 'package:utd_hackathon2021/pages/driver_information.dart';
+import 'package:utd_hackathon2021/pages/eye_witness_page.dart';
+import 'package:utd_hackathon2021/pages/insurance_page.dart';
 import 'package:utd_hackathon2021/pages/login_page.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:provider/provider.dart';
-import 'util/user.dart';
-import 'util/services/auth.dart';
+import 'package:utd_hackathon2021/pages/main_page.dart';
+import 'package:utd_hackathon2021/pages/panic_page.dart';
+import 'package:utd_hackathon2021/pages/tips_page.dart';
+import 'package:utd_hackathon2021/pages/vehicle_info_page.dart';
 
-
-Future<void> main () async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() {
   runApp(const MyApp());
 }
 
@@ -18,15 +19,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<Users?>.value(
-      value: AuthService().user,
-      initialData: null,
-      child: MaterialApp(
-        title: 'HackUTD 2021',
-        theme: ThemeData(
+    return MaterialApp(
+      title: 'HackUTD 2021',
+      theme: ThemeData(
           colorScheme: const ColorScheme(
-              // Lighter Pink Color
-              primary: Color.fromRGBO(240, 123, 255, 1),
+            // Lighter Pink Color
+              primary: Color.fromRGBO(240, 23, 22, 1),
 
               // Darker Variant Of Primary Pink
               primaryVariant: Color.fromRGBO(186, 5, 211, 1),
@@ -66,17 +64,33 @@ class MyApp extends StatelessWidget {
             bodyText1: TextStyle(fontSize: 12, color: Color.fromRGBO(0, 0, 0, 1)),
 
           )
-        ),
-        // Starts on the Login Screen
-        initialRoute: "Login",
-        // List of routes for our User to use
-        routes: {
-          // Login Route for the User
-          "Login": (context) => const LoginPage(),
-          // Route for Driver Information
-          //TODO UNCOMMENT THIS --> "DriverInformation": (context) => const DriverInformationPage(),
-        },
       ),
+      // Starts on the Login Screen
+      initialRoute: "/",
+      // List of routes for our User to use
+      routes: {
+        // Login Route for the User
+        "/": (context) => const LoginPage(),
+        // Route for Main Page
+        "/Main": (context) => const MainPage(),
+        // Route for Panic
+        "/Panic": (context) => const PanicPage(),
+        // Route for Tips Page
+        "/Tips": (context) => const TipsPage(),
+        // Route for Driver Information
+        "/DriverInformation": (context) => const DriverInformation(),
+        // Route for Vehicle
+        "/VehicleInformation": (context) => const VehiclePage(),
+        // Route for InsuranceInformation
+        "/InsuranceInformation": (context) => const InsurancePage(),
+        // Route for Eyewitness
+        "/Eyewitness": (context) => const EyeWitness(list: []),
+        // Route for Accident Locator
+        "/AccidentLocator": (context) => const AccidentLocator(),
+        // Route for Camera
+        "/Camera": (context) => const CameraPage(),
+
+      },
     );
   }
 }

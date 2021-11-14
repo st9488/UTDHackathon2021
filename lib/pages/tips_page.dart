@@ -47,9 +47,9 @@ class _TipsPageState extends State<TipsPage>{
             )
         ),
           CupertinoButton(
-              child: Text("Next"),
+              child: Text("Next", style: TextStyle(color: Colors.white)),
               onPressed: (){
-
+                Navigator.of(context).pushReplacementNamed('/DriverInformation');
               },
               color: Colors.red
           )

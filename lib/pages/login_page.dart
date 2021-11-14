@@ -76,7 +76,7 @@ class LoginInfo extends StatelessWidget{
           const InputFields(),
           CupertinoButton(
               color: Theme.of(context).colorScheme.background,
-              child: const Text("Submit"),
+              child: const Text("Submit", style: TextStyle(color: Colors.white)),
               onPressed: () {
                 Navigator.of(context).pushReplacementNamed('/Main');
               }

@@ -90,7 +90,7 @@ class _DriverInformationState extends State<DriverInformation> {
                     child: const Text(
                       "Add Passenger",
                       style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1),
-                      ),
+                          decoration: TextDecoration.underline),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
@@ -101,7 +101,7 @@ class _DriverInformationState extends State<DriverInformation> {
                 CupertinoButton(
                     child: const Text(
                       "Add Driver",
-                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1)),
+                      style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.underline),
                       textAlign: TextAlign.center,
                     ),
                     onPressed: () {
@@ -115,7 +115,7 @@ class _DriverInformationState extends State<DriverInformation> {
             CupertinoButton(
                 child: const Text(
                   "No one else",
-                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1)),
+                  style: TextStyle(fontSize: 20, color: Color.fromRGBO(255, 0, 0, 1), decoration: TextDecoration.underline),
                   textAlign: TextAlign.center,
                 ),
                 onPressed: () {

@@ -17,7 +17,8 @@ class PanicPage extends StatelessWidget {
             const Text("First and foremost, make sure to call the police",
                 style: TextStyle(
                     decoration: TextDecoration.none,
-                    fontSize: 25
+                    fontSize: 25,
+                    color: Colors.red
                 )
             ),
             Container(height: 40,),
@@ -27,7 +28,7 @@ class PanicPage extends StatelessWidget {
               children: [
                 const Text("Inform the police of: " ,
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.red,
                       decoration: TextDecoration.none,
                       fontSize: 20,
                     )

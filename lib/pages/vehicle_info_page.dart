@@ -13,17 +13,10 @@ class VehiclePage extends StatefulWidget
 }
 
 class _VehiclePageState extends State<VehiclePage> {
-  late TextEditingController _textController1;
-  late TextEditingController _textController2;
-  late TextEditingController _textController3;
-  @override
-  void initState()
-  {
-    super.initState();
-    _textController1 = TextEditingController(text: "make");
-    _textController2 = TextEditingController(text: "model");
-    _textController3 = TextEditingController(text: "year");
-  }
+  final TextEditingController _textController1 = TextEditingController(text: "Make");
+  final TextEditingController _textController2 = TextEditingController(text: "Model");
+  final TextEditingController _textController3 = TextEditingController(text: "Year");
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -40,15 +33,11 @@ class _VehiclePageState extends State<VehiclePage> {
               SizedBox(
                 width: 250,
                 child: CupertinoTextField(
-                  placeholderStyle: const TextStyle(color: Colors.white),
                   placeholder: 'Make',
                   style: const TextStyle(color: Colors.white),
-                  onChanged: (String value)
-                  {
-                    _textController1.value;
-                  },
+                  controller: _textController1,
                   decoration: const BoxDecoration(
-                      color: Colors.grey
+                    color: Colors.grey
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -59,19 +48,15 @@ class _VehiclePageState extends State<VehiclePage> {
               ),
               SizedBox(
                 width: 250,
-                  child: CupertinoTextField(
-                    placeholderStyle: const TextStyle(color: Colors.white),
-                    placeholder: 'Model',
-                    style: const TextStyle(color: Colors.white),
-                    onChanged: (String value)
-                    {
-                      _textController2.value;
-                    },
-                    decoration: const BoxDecoration(
-                        color: Colors.grey
-                    ),
-                    textAlign: TextAlign.center,
+                child: CupertinoTextField(
+                  placeholder: 'Model',
+                  style: const TextStyle(color: Colors.white),
+                  controller: _textController2,
+                  decoration: const BoxDecoration(
+                      color: Colors.grey
                   ),
+                  textAlign: TextAlign.center,
+                ),
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               const Text('Year of your car',
@@ -79,25 +64,22 @@ class _VehiclePageState extends State<VehiclePage> {
               ),
               SizedBox(
                 width: 250,
-                  child: CupertinoTextField(
-                    placeholderStyle: const TextStyle(color: Colors.white),
-                    placeholder: 'Year',
-                    style: const TextStyle(color: Colors.white),
-                    onChanged: (String value)
-                    {
-                      _textController3.value;
-                    },
-                    decoration: const BoxDecoration(
-                        color: Colors.grey
-                    ),
-                    textAlign: TextAlign.center,
+                child: CupertinoTextField(
+                  placeholder: 'Year',
+                  keyboardType: TextInputType.number,
+                  style: const TextStyle(color: Colors.white),
+                  controller: _textController3,
+                  decoration: const BoxDecoration(
+                      color: Colors.grey
                   ),
+                  textAlign: TextAlign.center,
+                ),
               ),
               const Padding(padding: EdgeInsets.symmetric(vertical: 20)),
               CupertinoButton(
                   child: const Text('Move forward', style: TextStyle(color: Colors.white)),
                   onPressed: (){
-                    currentClaim.vehicles.add(Vehicle(year: int.parse(_textController3.text), model: _textController2.text, make: _textController1.text));
+                    currentClaim.vehicles.add(Vehicle(make: _textController1.text, model: _textController2.text, year: int.parse(_textController3.text.toString())));
                     Navigator.of(context).pushReplacementNamed('/InsuranceInformation');
                   },
                   color: Colors.red

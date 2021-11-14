@@ -16,12 +16,12 @@ class MainPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              child: Text('Welcome to State Farm!',
-                style: TextStyle(
-                    decoration: TextDecoration.none,
-                    fontSize: 18
+                child: Text('Welcome to State Farm!',
+                    style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 18
+                    )
                 )
-              )
             ),
             Container(height: 70),
 
@@ -29,10 +29,10 @@ class MainPage extends StatelessWidget {
               width: 275,
               height: 50,
               child: CupertinoButton(
-                color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).colorScheme.primary,
                   child: Text('File New Claim'),
                   onPressed: () {}
-                  ),
+              ),
             ),
             Container(height: 50.0),
             Container(
