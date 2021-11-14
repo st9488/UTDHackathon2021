@@ -44,6 +44,15 @@ class MainPage extends StatelessWidget {
                   onPressed: () {}
               ),
             ),
+            Container(
+              width: 275,
+              height: 50,
+              child: CupertinoButton(
+                  color: Theme.of(context).colorScheme.primary,
+                  child: Text('Log Out'),
+                  onPressed: () {}
+              ),
+            )
           ],
         )
       ],
