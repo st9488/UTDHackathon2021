@@ -1,7 +1,7 @@
 class Person {
-  Person(this.firstName, this.lastName, this.isMale);
+  Person({required this.firstName, required this.lastName, required this.isMale});
 
   String firstName;
   String lastName;
-  bool isMale;
+  String isMale;
 }

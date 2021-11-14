@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: const ColorScheme(
             // Lighter Pink Color
-            primary: Color.fromRGBO(240, 123, 255, 1),
+            primary: Color.fromRGBO(240, 23, 22, 1),
 
             // Darker Variant Of Primary Pink
             primaryVariant: Color.fromRGBO(186, 5, 211, 1),
@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
       // List of routes for our User to use
       routes: {
         // Login Route for the User
-        "Login": (context) => const LoginPage(),
+        "/": (context) => const LoginPage(),
         // Route for Driver Information
         "DriverInformation": (context) => const DriverInformation(),
         // Route for Main Page
